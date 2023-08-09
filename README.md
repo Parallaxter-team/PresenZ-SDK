@@ -1,6 +1,6 @@
 # PresenZ-SDK
 
-[PresenZ website](presenzvr.com/)
+[PresenZ website](https://presenzvr.com/)
 
 This is the PresenZ SDK for windows and linux.
 
