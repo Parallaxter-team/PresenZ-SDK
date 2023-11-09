@@ -7,6 +7,7 @@
 
 #include "export.h"
 
+#include "PzConstants.h"
 // needed for defining C-String variadic function
 #include <stdarg.h>
 #include <stddef.h>
@@ -60,35 +61,6 @@ namespace PRESENZ_VERSION_NS {
 ///     PzSetDoneProgression() (operations are complete)
 ///
 /// \{
-
-
-
-/// @brief Severity log levels for each log line
-enum LogLevel
-{
-    LL_Error = 0,               // An error occurred, most likely fatal and PresenZ is unable to continue
-    LL_Warning = 1,             // An unexpected event occurred, while not fatal, user should be very cautious about the results
-    LL_Info = 2,                // Simple notifications, nothing wrong here
-    LL_Debug = 3,               // Notifications used for tracking issues and bugs
-    LL_Trace = 4,               // - For internal use
-};
-
-/// @brief The default mode is CR_NoCarriageReturn, this means that the last carriage return is skipped in the
-/// user callback. Set it to CR_CarriageReturnNeeded if your logger needs a terminal carriage return.
-enum CarriageReturnMode
-{
-    CR_NoCarriageReturn = 0,
-    CR_CarriageReturnNeeded = 1,
-    CR_Ignore = 2
-};
-
-
-enum ProgressBarType
-{
-    PT_horizontal = 0,
-    PT_vertical = 1,
-    PT_callback = 2
-};
 
 
 //////////////////////////////////////////////////////////////////////////

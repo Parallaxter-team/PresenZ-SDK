@@ -9,6 +9,7 @@
 #define _PzDetectSampleAPI_h_
 
 #include "export.h"
+#include "PzConstants.h"
 #include "common/vector.h"
 #include "common/color.h"
 #include <stdint.h>
@@ -68,14 +69,6 @@ namespace PRESENZ_VERSION_NS {
 		/// Callback for querying render flags
         QueryFlagsCallback query;
     };
-
-
-    enum DetectSample_transp {
-        DST_opaque = 0,
-        DST_glass = 1,
-        DST_semiTransp = 2
-    };
-    
 
     //////////////////////////////////////////////////////////////////////////
     ///\brief PzDetectSample defines the structure of a detection sample. 

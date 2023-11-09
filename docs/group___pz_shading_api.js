@@ -14,8 +14,8 @@ var group___pz_shading_api =
       [ "pzBendRay", "struct_presen_z_1_1_shading_1_1v3__0_1_1_pz_bend_ray_ex.html#a9e9c5a557b9f2e0d9331117819cf0df8", null ]
     ] ],
     [ "getBendRayDerivative_cameraSpace", "group___pz_shading_api.html#gaaa7005bc1394303d35f9bed929c77799", null ],
-    [ "PzGetBendRayRenderPhase", "group___pz_shading_api.html#ga81c5d3b95ac2ea92f595345a222aa062", null ],
     [ "PzGetBendRayRenderPhase", "group___pz_shading_api.html#gab494b6706b2ce7119c4736a70bd6f594", null ],
+    [ "PzGetBendRayRenderPhase", "group___pz_shading_api.html#ga81c5d3b95ac2ea92f595345a222aa062", null ],
     [ "PzGetBestCameraWSPosition", "group___pz_shading_api.html#ga7b1e9d6ef33e499eca978c3dba837d98", null ],
     [ "PzGetDoubleReflectanceTransmitance", "group___pz_shading_api.html#ga7e82f2702d8881494e22941988be4bee", null ],
     [ "PzGetReflectionDirection", "group___pz_shading_api.html#ga37c6f602200a7c66975426ba37d7ed5f", null ],

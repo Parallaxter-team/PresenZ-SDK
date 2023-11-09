@@ -7,57 +7,9 @@ var group___pz_phase_api =
       [ "resolutionY", "struct_presen_z_1_1_phase_1_1v3__0_1_1_pz_resolution_param.html#a371cd97690481b2d2627ba015882ca60", null ],
       [ "valid", "struct_presen_z_1_1_phase_1_1v3__0_1_1_pz_resolution_param.html#a28e3c179a86f337095088b3ca02a2b2a", null ]
     ] ],
-    [ "AOVType", "group___pz_phase_api.html#gadd16db84a471b163119fa85bfa9df0fd", [
-      [ "BOOL", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fdae663dbb8f8244e122acb5bd6b2c216e1", null ],
-      [ "INT", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fdafd5a5f51ce25953f3db2c7e93eb7864a", null ],
-      [ "FLOAT", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fda9cf4a0866224b0bb4a7a895da27c9c4c", null ],
-      [ "RGB", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fda30447e9f6efa4afdd251f9afc1d5fb44", null ],
-      [ "RGBA", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fdae75845ff0980839032f4a78a0d42753c", null ],
-      [ "VEC", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fdacff9b70db3f47a019c78e266909da55c", null ],
-      [ "VEC2", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fdab77decd1c62766213f0df1b81b3e9647", null ],
-      [ "PRZ", "group___pz_phase_api.html#ggadd16db84a471b163119fa85bfa9df0fda33ba80b25fa7bcd949b12f5917d3c656", null ]
-    ] ],
-    [ "DetectionRTFiltering", "group___pz_phase_api.html#ga02c989de471ab67092a644aa9faf56df", [
-      [ "no_filter", "group___pz_phase_api.html#gga02c989de471ab67092a644aa9faf56dfa8fe5bd5f2bb9105b5cfc36b806d31213", null ],
-      [ "no_duplicates", "group___pz_phase_api.html#gga02c989de471ab67092a644aa9faf56dfaac3f2d187a6026656ffcc472525d393c", null ]
-    ] ],
-    [ "DetectionSafeGuard", "group___pz_phase_api.html#gad9f2e08d4f565bc8e1d21ceb48f50a72", [
-      [ "DSG_warning", "group___pz_phase_api.html#ggad9f2e08d4f565bc8e1d21ceb48f50a72a8695b246e9acde06807c0f763eeb028f", null ],
-      [ "DSG_error", "group___pz_phase_api.html#ggad9f2e08d4f565bc8e1d21ceb48f50a72aad47f101ab6a84163c86314fbfd1f195", null ],
-      [ "DSG_disabled", "group___pz_phase_api.html#ggad9f2e08d4f565bc8e1d21ceb48f50a72ae31eaee77988d5953bff8791498e4cbd", null ]
-    ] ],
-    [ "Eye", "group___pz_phase_api.html#ga3104904c134a52357b85f763f6dfd48f", [
-      [ "RC_LeftAndRight", "group___pz_phase_api.html#gga3104904c134a52357b85f763f6dfd48faa1703c467e4e95c2a7194aabb4db866f", null ],
-      [ "RC_Left", "group___pz_phase_api.html#gga3104904c134a52357b85f763f6dfd48fa4280d82f18d6dbafdeb68c811112455e", null ],
-      [ "RC_Right", "group___pz_phase_api.html#gga3104904c134a52357b85f763f6dfd48fac2b22af1f16cebd2cc909767c763a713", null ]
-    ] ],
-    [ "FroxtrumRayOrigin", "group___pz_phase_api.html#ga5afca472e9e085e718ec52a896c1faa8", [
-      [ "moveCameraOrigin", "group___pz_phase_api.html#gga5afca472e9e085e718ec52a896c1faa8acfa26a1f45b4f7b427fd196ee8a42063", null ],
-      [ "useCameraNearClip", "group___pz_phase_api.html#gga5afca472e9e085e718ec52a896c1faa8a07692d7b2f79a25114744932dc7b530f", null ]
-    ] ],
-    [ "Phase", "group___pz_phase_api.html#gae1c5184dc404edf057ed537bcfddef84", [
-      [ "Detect", "group___pz_phase_api.html#ggae1c5184dc404edf057ed537bcfddef84a48a95ceab76284afa466622424eba555", null ],
-      [ "Render", "group___pz_phase_api.html#ggae1c5184dc404edf057ed537bcfddef84ac677a954de25220db675695edacb4f71", null ],
-      [ "Detect_Reflection", "group___pz_phase_api.html#ggae1c5184dc404edf057ed537bcfddef84a9e72290cbba5243f4449f84168a3c99c", null ],
-      [ "Render_Reflection", "group___pz_phase_api.html#ggae1c5184dc404edf057ed537bcfddef84a4fa71226841d5dc4359c2e48fa8a079e", null ]
-    ] ],
-    [ "RayDerivativeType", "group___pz_phase_api.html#ga807ecb4005a2064ffa042b73d7a86133", [
-      [ "RDT_UNSCALED", "group___pz_phase_api.html#gga807ecb4005a2064ffa042b73d7a86133a11d7eb2a241d1f950a5d106da362c92b", null ],
-      [ "RDT_SCALED", "group___pz_phase_api.html#gga807ecb4005a2064ffa042b73d7a86133a40b7acd4ac6f46d87bf21d40d4ef873e", null ]
-    ] ],
-    [ "Space", "group___pz_phase_api.html#gab11a1dda34491acff014ddfc9e6bafb8", [
-      [ "Camera", "group___pz_phase_api.html#ggab11a1dda34491acff014ddfc9e6bafb8a72159b99f162eb7444ea0810dcce4442", null ],
-      [ "World", "group___pz_phase_api.html#ggab11a1dda34491acff014ddfc9e6bafb8a81f4537631c9ab219ec74de554483adc", null ]
-    ] ],
     [ "TerminatePhaseOptions", "group___pz_phase_api.html#gab309d51e14d4933eb0650d09120e07bf", [
       [ "SKIP_DISK_IO", "group___pz_phase_api.html#ggab309d51e14d4933eb0650d09120e07bfa4c992c255628c707cac2609ca38136fa", null ],
       [ "WRITE_TO_DISC", "group___pz_phase_api.html#ggab309d51e14d4933eb0650d09120e07bfa86e5b62552db8e0a2a2d21fa00ab1592", null ]
-    ] ],
-    [ "TransparencyRenderingType", "group___pz_phase_api.html#ga36a74ae11377f0edba8dcb5070390a4d", [
-      [ "PRZ_REGULAR", "group___pz_phase_api.html#gga36a74ae11377f0edba8dcb5070390a4da7dd4b95e541632ef996ef1aeaf346dcc", null ],
-      [ "PRZ_OPAQUE", "group___pz_phase_api.html#gga36a74ae11377f0edba8dcb5070390a4da9d90fb508b0f83e7938ec40d18de14a9", null ],
-      [ "PRZ_TRANSP", "group___pz_phase_api.html#gga36a74ae11377f0edba8dcb5070390a4da207fada585bc6f4ef37fcc78adff9960", null ],
-      [ "PRZ_BOTH", "group___pz_phase_api.html#gga36a74ae11377f0edba8dcb5070390a4daf1fb663f950f6e485ca1a18bf9d3f2ee", null ]
     ] ],
     [ "PzComputeRenderingResolutionParameters", "group___pz_phase_api.html#gab1862ca3334977c6899dd4cd823310b5", null ],
     [ "PzComputeRenderingResolutionParameters", "group___pz_phase_api.html#ga112adb7ff9c614e4ce6846def26a0f87", null ],

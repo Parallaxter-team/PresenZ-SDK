@@ -1,0 +1,25 @@
+var searchData=
+[
+  ['binio',['BinIO',['../namespace_presen_z_1_1_bin_i_o.html',1,'PresenZ']]],
+  ['block',['Block',['../namespace_presen_z_1_1_block.html',1,'PresenZ']]],
+  ['camera',['Camera',['../namespace_presen_z_1_1_camera.html',1,'PresenZ']]],
+  ['detectsample',['DetectSample',['../namespace_presen_z_1_1_detect_sample.html',1,'PresenZ']]],
+  ['logger',['Logger',['../namespace_presen_z_1_1_logger.html',1,'PresenZ']]],
+  ['phase',['Phase',['../namespace_presen_z_1_1_phase.html',1,'PresenZ']]],
+  ['presenz',['PresenZ',['../namespace_presen_z.html',1,'']]],
+  ['presenz_5fversion_5fns',['PRESENZ_VERSION_NS',['../namespace_presen_z_1_1_detect_sample_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html',1,'PresenZ::DetectSample']]],
+  ['presenz_5fversion_5fns',['PRESENZ_VERSION_NS',['../namespace_presen_z_1_1_logger_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html',1,'PresenZ::Logger']]],
+  ['presenz_5fversion_5fns',['PRESENZ_VERSION_NS',['../namespace_presen_z_1_1_phase_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html',1,'PresenZ::Phase']]],
+  ['rendersample',['RenderSample',['../namespace_presen_z_1_1_render_sample.html',1,'PresenZ']]],
+  ['shading',['Shading',['../namespace_presen_z_1_1_shading.html',1,'PresenZ']]],
+  ['util',['Util',['../namespace_presen_z_1_1_util.html',1,'PresenZ']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_shading_1_1v3__0.html',1,'PresenZ::Shading']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_phase_1_1v3__0.html',1,'PresenZ::Phase']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_util_1_1v3__0.html',1,'PresenZ::Util']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_detect_sample_1_1v3__0.html',1,'PresenZ::DetectSample']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_render_sample_1_1v3__0.html',1,'PresenZ::RenderSample']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_bin_i_o_1_1v3__0.html',1,'PresenZ::BinIO']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_logger_1_1v3__0.html',1,'PresenZ::Logger']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_camera_1_1v3__0.html',1,'PresenZ::Camera']]],
+  ['v3_5f0',['v3_0',['../namespace_presen_z_1_1_block_1_1v3__0.html',1,'PresenZ::Block']]]
+];

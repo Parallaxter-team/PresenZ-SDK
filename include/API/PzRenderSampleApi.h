@@ -187,6 +187,11 @@ namespace PRESENZ_VERSION_NS {
     /// @param[in] iAlias the alias that was returned for the AOV during phase's initialization
     presenz_plugin_sdk_EXPORT void PzAddSampleAov(PzRenderSample &sample, const void* data, const int &iAlias);
 
+    /// @brief Add your own custom type of data.
+    /// @param[in] sample Sample that will be updated
+    /// @param[in] data pointer to raw data containing the AOV value for the point registered
+    /// @param[in] name the name that was used to register the AOV during phase's initialization
+    presenz_plugin_sdk_EXPORT void PzAddSampleAov(PzRenderSample& sample, const void* data, const std::string& name);
     //////////////////////////////////////////////////////////////////////////
 
     /// @brief Set the sample position. Use geometric normal (raw geometry normal) instead of shaded normal (with soften / bump / normal map applied) for better result.

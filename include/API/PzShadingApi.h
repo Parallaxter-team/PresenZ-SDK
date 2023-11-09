@@ -8,7 +8,7 @@
 #define _PZSHADINGAPI_h_
 
 #include "export.h"
-#include "PzPhaseApi.h"
+#include "PzConstants.h"
 #include "common/vector.h"
 
 namespace PresenZ {

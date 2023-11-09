@@ -47,6 +47,7 @@ var group___render_sample =
     [ "PzAddMirrorSampleAov", "group___render_sample.html#gaebc69f8b1da37918174e448b587c08f9", null ],
     [ "PzAddRightColorSampleAov", "group___render_sample.html#ga114a179e0c69234d410fa8edd9a7b54e", null ],
     [ "PzAddSampleAov", "group___render_sample.html#ga4ed240d714fdab571e1e8c73933fe63f", null ],
+    [ "PzAddSampleAov", "group___render_sample.html#gaacec72b015002beedc4eb7254076362b", null ],
     [ "PzAddVelocitySampleAov", "group___render_sample.html#gae086107e0d3a7d2e8236c112691302f5", null ],
     [ "PzAddWSVelocitySampleAov", "group___render_sample.html#gac83cb73b2d00510d711db595d5a66c10", null ],
     [ "PzGetRenderRayDepth", "group___render_sample.html#ga290666eee11963d737f57fccb9b864d5", null ],

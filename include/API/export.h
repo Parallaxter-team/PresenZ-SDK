@@ -4,11 +4,11 @@
 #define H_VAL(str) #str
 #define H_TOSTRING(str) H_VAL(str)
 
-#define PRESENZ_FULL_VERSION "3.0.2.SDK_fixes.Build2.f9fa5bb"
+#define PRESENZ_FULL_VERSION "3.0.3"
 
 #define PRESENZ_MAJOR_VERSION 3
 #define PRESENZ_MINOR_VERSION 0
-#define PRESENZ_PATCH_VERSION 2
+#define PRESENZ_PATCH_VERSION 3
 
 #ifndef PRESENZ_VERSION_NS 
 #define PRESENZ_VERSION_NS v3_0
