@@ -8,6 +8,7 @@
 #define _PZSHADINGAPI_h_
 
 #include "export.h"
+#include "PzDetectSampleApi.h"
 #include "PzConstants.h"
 #include "common/vector.h"
 
