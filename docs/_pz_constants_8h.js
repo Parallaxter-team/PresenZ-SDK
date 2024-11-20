@@ -8,7 +8,9 @@ var _pz_constants_8h =
       [ "RGBA", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fdae75845ff0980839032f4a78a0d42753c", null ],
       [ "VEC", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fdacff9b70db3f47a019c78e266909da55c", null ],
       [ "VEC2", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fdab77decd1c62766213f0df1b81b3e9647", null ],
-      [ "PRZ", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fda33ba80b25fa7bcd949b12f5917d3c656", null ]
+      [ "PRZ", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fda33ba80b25fa7bcd949b12f5917d3c656", null ],
+      [ "CRYPTOMATTE", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fda55a8566382b1368355d717ca85e0b360", null ],
+      [ "CRYPTOMATTE_INTERNAL", "_pz_constants_8h.html#add16db84a471b163119fa85bfa9df0fda29530c44eb4db471e971601ced57c127", null ]
     ] ],
     [ "CarriageReturnMode", "_pz_constants_8h.html#a09c183db9d6f5f4e369cab8b6a566a92", [
       [ "CR_NoCarriageReturn", "_pz_constants_8h.html#a09c183db9d6f5f4e369cab8b6a566a92a4794744b59a0b9c9ee7267cd770f03fb", null ],
@@ -27,7 +29,8 @@ var _pz_constants_8h =
     [ "DetectSample_transp", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0", [
       [ "DST_opaque", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0a764df783476834077c68894c4c3be2ef", null ],
       [ "DST_glass", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0ae0e0d5fadce4b0933385ee555c8f7a53", null ],
-      [ "DST_semiTransp", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0ac1d7b5d5d133d2381c505deeff6b457a", null ]
+      [ "DST_stencilTransp", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0a6e584910cdb113021898d02719561f31", null ],
+      [ "DST_stencilOpaque", "_pz_constants_8h.html#a4235bda2ada163773d83c4d1d6c75bc0a8e6ce9b9b4508261b44fbf3fdd3bcc5a", null ]
     ] ],
     [ "Eye", "_pz_constants_8h.html#a3104904c134a52357b85f763f6dfd48f", [
       [ "RC_LeftAndRight", "_pz_constants_8h.html#a3104904c134a52357b85f763f6dfd48faa1703c467e4e95c2a7194aabb4db866f", null ],

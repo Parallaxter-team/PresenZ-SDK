@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['what_753',['what',['../class_presen_z_1_1_util_1_1v3__0_1_1_exception.html#ad62489809e3df568e973597b928d6d9b',1,'PresenZ::Util::v3_0::Exception']]]
+  ['raytestinterface_0',['RayTestInterface',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_ray_test_interface.html#a49e72cbe2947109f6afde2e096b95280',1,'PresenZ::DetectSample::v4_0::RayTestInterface']]],
+  ['rgb_1',['rgb',['../group___n_o_z___r_g_b_a.html#ga47e7d944178095eec325e778806d6144',1,'NozRGBA::rgb()'],['../group___n_o_z___r_g_b_a.html#gac1a7a4be2fd245504248a7e9d08280cd',1,'NozRGBA::rgb() const']]]
 ];

@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['inpixelposxy_770',['inPixelPosXY',['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1_pz_render_sample.html#a574821a546e05c0ab8fde02ea0616b22',1,'PresenZ::RenderSample::v3_0::PzRenderSample']]],
-  ['ischaotic_771',['isChaotic',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_ray_test_result.html#a8a33ba6ff4f3da7799e33a2827f9d297',1,'PresenZ::DetectSample::v3_0::RayTestResult::isChaotic()'],['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_detect_sample.html#a8a33ba6ff4f3da7799e33a2827f9d297',1,'PresenZ::DetectSample::v3_0::PzDetectSample::isChaotic()']]],
-  ['ishair_772',['isHair',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_detect_sample.html#ad50b77be6452fcd203fa25771dd4f69e',1,'PresenZ::DetectSample::v3_0::PzDetectSample']]],
-  ['isstereoscopic_773',['isStereoScopic',['../struct_presen_z_1_1_shading_1_1v3__0_1_1_pz_bend_ray.html#a25d24f3fc254ac9d7f43b9be22fadd34',1,'PresenZ::Shading::v3_0::PzBendRay']]]
+  ['hit_0',['hit',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_ray_test_result.html#a9d3ba7a09d203fbcadc59723666e37fe',1,'PresenZ::DetectSample::v4_0::RayTestResult']]],
+  ['hitnormal_1',['hitNormal',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_pz_previous_detect_glass_sample.html#a89abeba874f4701e91ff5ad7601dd164',1,'PresenZ::DetectSample::v4_0::PzPreviousDetectGlassSample::hitNormal'],['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_pz_detect_sample.html#a4c9257ffdd839b215aabfba5f05fa02e',1,'PresenZ::DetectSample::v4_0::PzDetectSample::hitNormal']]],
+  ['hitpoint_2',['hitPoint',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_pz_previous_detect_glass_sample.html#a39246df9bccc12078d74da138ecfbfa4',1,'PresenZ::DetectSample::v4_0::PzPreviousDetectGlassSample::hitPoint'],['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_pz_detect_sample.html#a39246df9bccc12078d74da138ecfbfa4',1,'PresenZ::DetectSample::v4_0::PzDetectSample::hitPoint']]]
 ];

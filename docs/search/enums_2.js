@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['detectionrtfiltering_826',['DetectionRTFiltering',['../group___pz_phase_api.html#ga02c989de471ab67092a644aa9faf56df',1,'PresenZ::Phase::v3_0']]],
-  ['detectionsafeguard_827',['DetectionSafeGuard',['../group___pz_phase_api.html#gad9f2e08d4f565bc8e1d21ceb48f50a72',1,'PresenZ::Phase::v3_0']]],
-  ['detectsample_5ftransp_828',['DetectSample_transp',['../group___pz_detect_sample_api.html#ga4235bda2ada163773d83c4d1d6c75bc0',1,'PresenZ::DetectSample::v3_0']]]
+  ['detectionrtfiltering_0',['DetectionRTFiltering',['../namespace_presen_z_1_1_phase_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html#a02c989de471ab67092a644aa9faf56df',1,'PresenZ::Phase::PRESENZ_VERSION_NS']]],
+  ['detectionsafeguard_1',['DetectionSafeGuard',['../namespace_presen_z_1_1_phase_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html#ad9f2e08d4f565bc8e1d21ceb48f50a72',1,'PresenZ::Phase::PRESENZ_VERSION_NS']]],
+  ['detectsample_5ftransp_2',['DetectSample_transp',['../namespace_presen_z_1_1_detect_sample_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html#a4235bda2ada163773d83c4d1d6c75bc0',1,'PresenZ::DetectSample::PRESENZ_VERSION_NS']]]
 ];

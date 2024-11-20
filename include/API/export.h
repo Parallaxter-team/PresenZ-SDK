@@ -4,14 +4,14 @@
 #define H_VAL(str) #str
 #define H_TOSTRING(str) H_VAL(str)
 
-#define PRESENZ_FULL_VERSION "3.0.3"
+#define PRESENZ_FULL_VERSION "4.0.6"
 
-#define PRESENZ_MAJOR_VERSION 3
+#define PRESENZ_MAJOR_VERSION 4
 #define PRESENZ_MINOR_VERSION 0
-#define PRESENZ_PATCH_VERSION 3
+#define PRESENZ_PATCH_VERSION 6
 
 #ifndef PRESENZ_VERSION_NS 
-#define PRESENZ_VERSION_NS v3_0
+#define PRESENZ_VERSION_NS v4_0
 #endif
 
 #if defined(PRESENZ_SDK_DLL)

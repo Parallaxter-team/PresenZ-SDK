@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['stereoscopic_20images_943',['Stereoscopic images',['../stereo.html',1,'']]],
-  ['support_944',['Support',['../support.html',1,'']]]
+  ['hair_20and_20animation_0',['Misc.: Hair and Animation',['../hair.html',1,'']]]
 ];

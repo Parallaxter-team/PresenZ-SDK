@@ -8,7 +8,9 @@
 #include "common/color.h"
 
 #include "PzPhaseApi.h"
+
 #include <vector>
+#include <cstring>
 
 /// \file PzRenderSampleApi.h
 
@@ -115,6 +117,9 @@ namespace PRESENZ_VERSION_NS {
         vec4 v4;
         /// PresenZ Internals
         przAOV prz;
+
+        // initialize all values to zero
+        AOVData() { std::memset(this, 0, sizeof(AOVData)); }
     };
 
     struct PzRenderSample;
@@ -144,6 +149,26 @@ namespace PRESENZ_VERSION_NS {
         /// Extra values per sample
         std::vector<AOVData> AOVs;
     };
+
+    /** pixel data structure for filtering */
+    struct PzFilteredSample
+    {
+        PzFilteredSample() {}
+
+        struct mainPixel {
+            double z;
+            NozVector normal;
+            NozRGBA RGBA;
+            int X, Y;
+            int32_t camNum;
+            int sizeExp;
+            bool isFlipped;
+        };
+
+        mainPixel data;
+        std::vector<AOVData> unionAovs;
+    };
+
     
     /// @brief Will tag the current sample as a glass that need to be transparent. 
     /// @param[in] sample Sample that will be updated
@@ -226,13 +251,27 @@ namespace PRESENZ_VERSION_NS {
     /// @param[in] pixelY Pixel position Y of the sample (on the overall image)
     /// @param[in] depth Number of transparent hits when reaching the sample's hit
     /// @param[in] inSample sample to be saved into the bucket
-    presenz_plugin_sdk_EXPORT void PzProcessRenderSample(const size_t &bucketId, const int &pixelX, const int &pixelY, size_t depth, PzRenderSample &inSample);
+    presenz_plugin_sdk_EXPORT void PzProcessRenderSample(const size_t& bucketId, const int& pixelX, const int& pixelY, PzRenderSample& inSample);
+
+    /// @brief Filter the current RenderSample data
+    /// @param[in] x Pixel position X of the sample (on the overall image)
+    /// @param[in] y Pixel position X of the sample (on the overall image)
+    /// @param[in] renderSamples Array of renderSamples to filter
+    /// @param[in] pixelXY_Results the filtered samples array.
+    presenz_plugin_sdk_EXPORT void PzFilterRenderSample(const size_t& x, const size_t& y, std::vector<PzRenderSample>& renderSamples, std::vector<PzFilteredSample>& pixelXY_Results);
+
 
     /// @brief Get the ZDepth of a detected sampple.
     /// @param[in] pixelX Pixel position X of the sample (on the overall image)
     /// @param[in] pixelY Pixel position Y of the sample (on the overall image)
     /// @return The Z Value at the given coordinate
     presenz_plugin_sdk_EXPORT float PzGetRenderRayDepth(const int &pixelX, const int &pixelY);
+
+    /// @brief Set the number of samples launched for a pixel. If not used, it will use an internal counter that increased on each PzGetCameraRay(const double &x, const double &y) call.
+    /// @param[in] pixelX Pixel position X of the sample (on the overall image)
+    /// @param[in] pixelY Pixel position Y of the sample (on the overall image)
+    /// @param[in] count The number of samples launch by the camera for the specified pixel.
+    presenz_plugin_sdk_EXPORT void PzSetSamplesCount(const int& pixelX, const int& pixelY, const int &count);
 
     //////////////////////////////////////////////////////////////////////////
 

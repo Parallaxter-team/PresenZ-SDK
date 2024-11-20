@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['getbendrayderivative_5fcameraspace_541',['getBendRayDerivative_cameraSpace',['../group___pz_shading_api.html#gaaa7005bc1394303d35f9bed929c77799',1,'PresenZ::Shading::v3_0']]],
-  ['getnozm4identity_542',['getNozM4Identity',['../matrix_8h.html#a5ac8a8e0db5b1184d459544150af88ac',1,'matrix.h']]],
-  ['getnozpointbymatrixmult_543',['getNozPointByMatrixMult',['../matrix_8h.html#ac90ce9c808c99182cd53e2ff79f3153a',1,'matrix.h']]],
-  ['getnozvecbymatrixmult_544',['getNozVecByMatrixMult',['../matrix_8h.html#a0d857cee093f27bb8b3be8736acb433c',1,'matrix.h']]]
+  ['exception_0',['Exception',['../class_presen_z_1_1_util_1_1v4__0_1_1_exception.html#abfbc23b99b2e78b609d50ac688611236',1,'PresenZ::Util::v4_0::Exception::Exception()'],['../class_presen_z_1_1_util_1_1v4__0_1_1_exception.html#a34e0b5f850e83e4e926d8ec41e68393f',1,'PresenZ::Util::v4_0::Exception::Exception(const std::string &amp;str)'],['../class_presen_z_1_1_util_1_1v4__0_1_1_exception.html#aeb9d2225fe0715865c22c386be57ef35',1,'PresenZ::Util::v4_0::Exception::Exception(const Exception &amp;exc)']]]
 ];

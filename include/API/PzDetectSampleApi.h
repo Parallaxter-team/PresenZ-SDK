@@ -54,20 +54,61 @@ namespace PRESENZ_VERSION_NS {
         bool isChaotic;
     };
 
+    struct SaveDataStructure
+    {
+        SaveDataStructure() {}
+        
+        uint8_t camera;
+        bool isEstimated;
+        bool isHair;
+        bool isDraft;
+        bool isChaotic;
+        bool isFrustrum;
+        uint8_t expSize;
+        uint8_t transpType;
+        float z;
+        float minZ; // Ray offset
+        float maxZ; // Max distance to shot the ray
+        NozPoint normal;
+        uint8_t bestCam; // regardless of occlusion and priorities.
+        int pixelX;
+        int pixelY;
+
+    };
+
+    /// \brief Store the previous intersection along a camera ray
+/// this is used to avoid the detection of glass back layer 
+    struct PzPreviousDetectGlassSample
+    {
+        inline PzPreviousDetectGlassSample() : hitPoint(0.0f), hitNormal(0.0f) {}
+        NozPoint hitPoint;
+        NozVector hitNormal;
+    };
+
 	///\brief Callback for ray test intersection.
     typedef bool(*RayTestCallback)(const NozVector& origin, const NozVector& dir, const double dist, RayTestResult& outP, void* userData);
 	///\brief Callback for query of user data.
     typedef uint64_t(*QueryFlagsCallback)(uint64_t flags, void* userData);
+    ///\brief Callback for saving data.
+    typedef bool(*SaveDataCallBack)(const SaveDataStructure& info, void* userData);
+    ///\brief Callback for getting or saving the previous hit data
+    typedef bool(*PreviousHitDataCallBack)(PzPreviousDetectGlassSample& prevSample, bool save, void* userData);
 
     ///\brief This interface is forwarded to PzProcessDetectSample() so that PresenZ can perform an additional visibility check. 
     struct RayTestInterface
     {
 		/// user data pointer
-        void *userdata;
+        void *userdata = nullptr;
 		/// Callback for raytracing intersection test
-        RayTestCallback probe;
+        RayTestCallback probe = nullptr;
 		/// Callback for querying render flags
-        QueryFlagsCallback query;
+        QueryFlagsCallback query = nullptr;
+        /// Callback for saving the data if the renderer is responsible for it
+        SaveDataCallBack saveData = nullptr;
+        /// previous hit in case of glass surfaces
+        PreviousHitDataCallBack previousHit = nullptr;
+        RayTestInterface(void* userdata, RayTestCallback probe, QueryFlagsCallback query, SaveDataCallBack saveData, PreviousHitDataCallBack previousHit)
+            : userdata(userdata), probe(probe), query(query), saveData(saveData), previousHit(previousHit) {}
     };
 
     //////////////////////////////////////////////////////////////////////////
@@ -92,15 +133,6 @@ namespace PRESENZ_VERSION_NS {
 		/// Hitpoint  in the sample coordinates (see PzSetSampleSpace(Space renderSpace)).
         NozPoint hitPoint; 
     };
-	
-	/// \brief Store the previous intersection along a camera ray
-	/// this is used to avoid the detection of glass back layer 
-    struct PzPreviousDetectGlassSample
-    {
-        inline PzPreviousDetectGlassSample(): hitPoint(0.0f), hitNormal(0.0f){}
-        NozPoint hitPoint;
-        NozVector hitNormal;
-    };
 
 	/// \brief During the detection phase, ray intersections need to be notified to PresenZ through PzProcessDetectSample(). This function needs to be called for each
     /// sample in the detection phase.
@@ -110,8 +142,7 @@ namespace PRESENZ_VERSION_NS {
     /// @return RGBA values of the sample
     presenz_plugin_sdk_EXPORT NozRGBA PzProcessDetectSample(RayTestInterface *intfPtr, const PzDetectSample& sample, const size_t &threadIndex);
     //////////////////////////////////////////////////////////////////////////
-
-
+    
     //////////////////////////////////////////////////////////////////////////
     ///\brief PzDetectSample needs to know what is the sampleIndex. In some renderers, this information can't be 
     /// reliably obtained. If this is the case, PresenZ can guess the sample index from the ray origin. 

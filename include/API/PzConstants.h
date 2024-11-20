@@ -44,7 +44,8 @@ namespace PresenZ {
             enum DetectSample_transp {
                 DST_opaque = 0,
                 DST_glass = 1,
-                DST_semiTransp = 2
+                DST_stencilTransp = 2,
+                DST_stencilOpaque = 3
             };
         }
     }
@@ -149,7 +150,11 @@ namespace PresenZ {
                 /// 2D Vector
                 VEC2 = 6,
                 /// PresenZ Internal used only on our Buckets 
-                PRZ = 7
+                PRZ = 7,
+                // for cryptomatte
+                CRYPTOMATTE = 8,
+                // for cryptomatte, internal data
+                CRYPTOMATTE_INTERNAL = 9
             };
 
         }

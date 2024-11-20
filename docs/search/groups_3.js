@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['logging_20interface_929',['Logging interface',['../group___pz_app_logger.html',1,'']]]
+  ['detection_20sample_20interface_0',['Detection Sample interface',['../group___pz_detect_sample_api.html',1,'']]]
 ];

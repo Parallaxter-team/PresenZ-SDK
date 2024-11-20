@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['z_475',['z',['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1vec3.html#af73583b1e980b0aa03f9884812e9fd4d',1,'PresenZ::RenderSample::v3_0::vec3::z()'],['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1vec4.html#af73583b1e980b0aa03f9884812e9fd4d',1,'PresenZ::RenderSample::v3_0::vec4::z()'],['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1_pz_render_sample.html#ab3e6ed577a7c669c19de1f9c1b46c872',1,'PresenZ::RenderSample::v3_0::PzRenderSample::z()'],['../group___n_o_z__vector.html#gaf73583b1e980b0aa03f9884812e9fd4d',1,'NozPoint::z()']]]
+  ['query_0',['query',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_ray_test_interface.html#af9b0c64fd8e21243d9d83ed8c1953a53',1,'PresenZ::DetectSample::v4_0::RayTestInterface']]],
+  ['queryflagscallback_1',['QueryFlagsCallback',['../group___pz_detect_sample_api.html#ga07e2e197bc32f2fdc41b100d42b84483',1,'PresenZ::DetectSample::v4_0']]]
 ];

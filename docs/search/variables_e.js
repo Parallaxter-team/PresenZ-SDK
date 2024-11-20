@@ -1,7 +1,4 @@
 var searchData=
 [
-  ['r_785',['r',['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1prz_a_o_v.html#a4788d82c901b9367dd5c0daff8a7616b',1,'PresenZ::RenderSample::v3_0::przAOV::r()'],['../group___n_o_z___r_g_b_a.html#ga4788d82c901b9367dd5c0daff8a7616b',1,'NozRGB::r()'],['../group___n_o_z___r_g_b_a.html#ga4788d82c901b9367dd5c0daff8a7616b',1,'NozRGBA::r()']]],
-  ['resolutionx_786',['resolutionX',['../struct_presen_z_1_1_phase_1_1v3__0_1_1_pz_resolution_param.html#a24eba574aff4330b5b23cde062ceeaf4',1,'PresenZ::Phase::v3_0::PzResolutionParam']]],
-  ['resolutiony_787',['resolutionY',['../struct_presen_z_1_1_phase_1_1v3__0_1_1_pz_resolution_param.html#a371cd97690481b2d2627ba015882ca60',1,'PresenZ::Phase::v3_0::PzResolutionParam']]],
-  ['rgba_788',['RGBA',['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1_pz_render_sample.html#a15fa5a367c531649fbb5bb2a2c6e39a7',1,'PresenZ::RenderSample::v3_0::PzRenderSample']]]
+  ['query_0',['query',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_ray_test_interface.html#af9b0c64fd8e21243d9d83ed8c1953a53',1,'PresenZ::DetectSample::v4_0::RayTestInterface']]]
 ];

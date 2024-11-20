@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['normal_776',['normal',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_ray_test_result.html#a58649588b953a60c4ab3fb9b2143a87b',1,'PresenZ::DetectSample::v3_0::RayTestResult::normal()'],['../struct_presen_z_1_1_render_sample_1_1v3__0_1_1_pz_render_sample.html#afdddd54644ca7c73b3d22f7b2d206ca8',1,'PresenZ::RenderSample::v3_0::PzRenderSample::normal()']]]
+  ['maxz_0',['maxZ',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_save_data_structure.html#a1a4f15d1f73a8a725318a64a4303630c',1,'PresenZ::DetectSample::v4_0::SaveDataStructure']]],
+  ['minz_1',['minZ',['../struct_presen_z_1_1_camera_1_1v4__0_1_1_pz_camera_ray.html#a10783e24924a7160fed76c3a48530298',1,'PresenZ::Camera::v4_0::PzCameraRay::minZ'],['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_save_data_structure.html#a10783e24924a7160fed76c3a48530298',1,'PresenZ::DetectSample::v4_0::SaveDataStructure::minZ']]]
 ];

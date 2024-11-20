@@ -1,12 +1,12 @@
 var _pz_camera_api_8h =
 [
-    [ "PzGetCameraRay", "_pz_camera_api_8h.html#ga2eb896736291c40c72f66d8a7591dc12", null ],
-    [ "PzGetCameraRay", "_pz_camera_api_8h.html#ga0c9cf72a27ebe5aea1ef4d84842bc10b", null ],
-    [ "PzGetCenterRay", "_pz_camera_api_8h.html#gaa1864ca91f071751a146c69a74428f38", null ],
-    [ "PzGetRayDetectPhase", "_pz_camera_api_8h.html#ga98d7ec2b0e67da83b7833f1ddc8450c5", null ],
-    [ "PzGetRayMinMaxZ", "_pz_camera_api_8h.html#gac9da28067eeb37b43ec6ecf4f2fe03f9", null ],
-    [ "PzGetRayRenderPhase", "_pz_camera_api_8h.html#gac9c21e11dba1475a8a755ead8a916151", null ],
-    [ "PzGetSeed", "_pz_camera_api_8h.html#gadbbab605b6d214da30cd21864c59cc6e", null ],
-    [ "PzGetSpecularRay", "_pz_camera_api_8h.html#ga886f1b22774afe58b527b98b10e26c3a", null ],
-    [ "PzGetUVFromRay", "_pz_camera_api_8h.html#ga7e29619a64903895a588a4a8ecd9b1c2", null ]
+    [ "PzGetCameraRay", "_pz_camera_api_8h.html#ga2efdc9059c503a12228edc4acea39bb7", null ],
+    [ "PzGetCameraRay", "_pz_camera_api_8h.html#ga7e55e0eb7da11c38ffb45a64a587fea4", null ],
+    [ "PzGetCenterRay", "_pz_camera_api_8h.html#gaad1db4d59e19276d6c57f920364ad830", null ],
+    [ "PzGetRayDetectPhase", "_pz_camera_api_8h.html#ga0216b2e47f14934ff94f8bebece0d67b", null ],
+    [ "PzGetRayMinMaxZ", "_pz_camera_api_8h.html#gada997f5fb10aac16f07fe75ab792b9a2", null ],
+    [ "PzGetRayRenderPhase", "_pz_camera_api_8h.html#ga5358a6180c22efcb637920a2c87173b9", null ],
+    [ "PzGetSeed", "_pz_camera_api_8h.html#ga2e3383095a4f5dc77d47f8a0ad91653d", null ],
+    [ "PzGetSpecularRay", "_pz_camera_api_8h.html#ga99f96383ca61a19c957ee512104d613e", null ],
+    [ "PzGetUVFromRay", "_pz_camera_api_8h.html#gaa6fa25f6eba2c3d8f1cbfe59724601f1", null ]
 ];

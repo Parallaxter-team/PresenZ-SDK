@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "PresenZ SDK", "index.html", [
-    [ "PresenZ plugin SDK - Programmer Manual", "index.html#autotoc_md56", [
-      [ "Table of Contents", "index.html#autotoc_md57", null ]
+    [ "PresenZ plugin SDK - Programmer Manual", "index.html#autotoc_md58", [
+      [ "Table of Contents", "index.html#autotoc_md59", null ]
     ] ],
     [ "General flow", "flow.html", [
       [ "1.1 Detection Phase", "flow.html#autotoc_md0", null ],
@@ -112,12 +112,14 @@ var NAVTREE =
     ] ],
     [ "Implementation in Arnold", "arnold.html", [
       [ "10.1 Camera", "arnold.html#autotoc_md53", null ],
-      [ "10.2 Intersection shader", "arnold.html#autotoc_md54", null ],
-      [ "10.3 Driver", "arnold.html#autotoc_md55", null ]
+      [ "10.2 AOV shader", "arnold.html#autotoc_md54", null ],
+      [ "10.3 Intersection shader", "arnold.html#autotoc_md55", null ],
+      [ "10.4 Filter", "arnold.html#autotoc_md56", null ],
+      [ "10.5 Driver", "arnold.html#autotoc_md57", null ]
     ] ],
     [ "Support", "support.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
-    [ "Modules", "modules.html", "modules" ],
+    [ "Topics", "topics.html", "topics" ],
     [ "Namespace Members", "namespacemembers.html", [
       [ "All", "namespacemembers.html", "namespacemembers_dup" ],
       [ "Functions", "namespacemembers_func.html", null ],
@@ -133,7 +135,7 @@ var NAVTREE =
         [ "All", "functions.html", "functions_dup" ],
         [ "Functions", "functions_func.html", null ],
         [ "Variables", "functions_vars.html", null ],
-        [ "Related Functions", "functions_rela.html", null ]
+        [ "Related Symbols", "functions_rela.html", null ]
       ] ]
     ] ],
     [ "Files", "files.html", [
@@ -151,10 +153,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_pz_app_logger_8h.html",
-"class_presen_z_1_1_util_1_1v3__0_1_1_exception.html#ad62489809e3df568e973597b928d6d9b",
-"group___n_o_z___r_g_b_a.html#gacbc97f3a3dd0b6c9d6885e9c5214ff15",
-"group___pz_app_logger.html#ga422803cfaa68fc9416926b3759ba3380",
-"matrix_8h.html#a5456c000da89b7305608f944be11d9a7"
+"group___n_o_z___r_g_b_a.html#ga4788d82c901b9367dd5c0daff8a7616b",
+"group___pz_phase_api.html#ga59c42493e6b8e40e92057362065715e1",
+"struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_save_data_structure.html#ac66c2e837c24a5cd822b7b42ed61558d"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

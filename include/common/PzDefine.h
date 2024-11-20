@@ -2,7 +2,7 @@
 #define _PresenZ_Utility_define_h_
 
 #ifndef PRESENZ_VERSION_NS 
-#define PRESENZ_VERSION_NS v3_0
+#define PRESENZ_VERSION_NS v4_0
 #endif
 
 #include <sstream>
@@ -30,6 +30,8 @@ namespace PRESENZ_VERSION_NS {
         ARNOLD = 5,
         // Vray Japan
 		VRAY_JAPAN = 6,
+		// Nuke
+		NUKE = 7,
 		/// For developping
         PRESENZ_DEVELOP = 49,
 		/// For debugging

@@ -1,5 +1,5 @@
 var files_dup =
 [
-    [ "presenz-authoring", "dir_72dab234ff2a80cc7eeb1de0d249cb11.html", "dir_72dab234ff2a80cc7eeb1de0d249cb11" ],
-    [ "PresenZ3.0.2_Windows", "dir_4a17470f80158c311ab7e3dce3748fd5.html", "dir_4a17470f80158c311ab7e3dce3748fd5" ]
+    [ "PresenZ4.0.6_Windows", "dir_a2bcd2fdd2c5a3c01789c538633b718e.html", "dir_a2bcd2fdd2c5a3c01789c538633b718e" ],
+    [ "resources", "dir_0fc3f8f3ef96ce2d45d66d6e29832317.html", "dir_0fc3f8f3ef96ce2d45d66d6e29832317" ]
 ];

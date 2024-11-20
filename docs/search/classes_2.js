@@ -1,9 +1,4 @@
 var searchData=
 [
-  ['nozlab_479',['NozLAB',['../struct_noz_l_a_b.html',1,'']]],
-  ['nozpoint_480',['NozPoint',['../struct_noz_point.html',1,'']]],
-  ['nozpoint2_481',['NozPoint2',['../struct_noz_point2.html',1,'']]],
-  ['nozrgb_482',['NozRGB',['../struct_noz_r_g_b.html',1,'']]],
-  ['nozrgba_483',['NozRGBA',['../struct_noz_r_g_b_a.html',1,'']]],
-  ['nozxyy_484',['NozxyY',['../struct_nozxy_y.html',1,'']]]
+  ['exception_0',['Exception',['../class_presen_z_1_1_util_1_1v4__0_1_1_exception.html',1,'PresenZ::Util::v4_0']]]
 ];

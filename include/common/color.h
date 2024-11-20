@@ -92,19 +92,12 @@ struct NozRGB
 	float g; 
 /// blue	
 	float b;
-    NozRGB()
-    {
-        r = 0.0; 
-        g = 0.0; 
-        b = 0.0;
-    }
-/// 3 floats to RGB    
-    NozRGB(float r, float g, float b)
-    {
-        this->r = r;
-        this->g = g;
-        this->b = b;
-    }
+
+    NozRGB() = default;
+    explicit NozRGB(float c) : r(c), g(c), b(c) { }
+    constexpr          NozRGB(float r, float g, float b) : r(r), g(g), b(b) { }
+
+
 /// add operator
     NozRGB operator+(const NozRGB& rgb) const
     {
@@ -318,17 +311,11 @@ struct NozRGBA
 	float b;
 /// alpha	
 	float a;
-    NozRGBA()
-    {
-        r = 0.0; g = 0.0; b = 0.0; a = 1.0;
-    }
-/// 4 floats to RGBA
-    NozRGBA(float r, float g, float b, float a){ 
-        this->r = r; 
-        this->g = g; 
-        this->b = b; 
-        this->a = a; 
-    }
+
+    NozRGBA() = default;
+    explicit NozRGBA(float c) : r(c), g(c), b(c), a(c) { }
+    constexpr          NozRGBA(float r, float g, float b, float a) : r(r), g(g), b(b), a(a) { }
+
 /// RGB + alpha float to RGBA
     NozRGBA(const NozRGB &col, const float &a)
     {
@@ -686,10 +673,10 @@ inline unsigned int nozRGBATo_Int32(const NozRGBA &c)
 inline NozRGBA nozRGBAFrom_Int32(unsigned int colorInt32)
 {
     
-    float r_tmp = (float)((colorInt32 >> 24) & 255)/255.0;
-    float g_tmp = (float)((colorInt32 >> 16) & 255)/255.0;
-    float b_tmp = (float)((colorInt32 >> 8) & 255)/255.0;
-    float a_tmp = (float)(colorInt32 & 255)/255.0;
+    float r_tmp = (float)((colorInt32 >> 24) & 255)/255.0f;
+    float g_tmp = (float)((colorInt32 >> 16) & 255)/255.0f;
+    float b_tmp = (float)((colorInt32 >> 8) & 255)/255.0f;
+    float a_tmp = (float)(colorInt32 & 255)/255.0f;
     return nozRGBA(r_tmp, g_tmp, b_tmp, a_tmp);
 }
 
@@ -718,7 +705,7 @@ inline float _XYZf(float n)
         
     }
     else {
-        return 7.787 * n + 16.0 / 116.0;
+        return 7.787f * n + 16.0f / 116.0f;
        
     }
     //return n > 0.008856 ? pow(n, 1.0 / 3.0) : (903.3 * n + 16.0) / 116.0;
@@ -731,7 +718,7 @@ inline float _XYZf(float n)
 inline NozRGB NozRGBfromHSV( float h, float s, float v)
 {
     NozRGB out;
-    double      p, q, t, ff;
+    float      p, q, t, ff;
     long        i;
 
 
@@ -741,13 +728,13 @@ inline NozRGB NozRGBfromHSV( float h, float s, float v)
     }
 
 
-    if (h >= 360.0) h = 0.0;
-    h /= 60.0;
+    if (h >= 360.0f) h = 0.0f;
+    h /= 60.0f;
     i = (long)h;
     ff = h - i;
-    p = v * (1.0 - s);
-    q = v * (1.0 - (s * ff));
-    t = v * (1.0 - (s * (1.0 - ff)));
+    p = v * (1.0f - s);
+    q = v * (1.0f - (s * ff));
+    t = v * (1.0f - (s * (1.0f - ff)));
 
     switch (i) {
     case 0:
@@ -791,7 +778,7 @@ inline NozRGB NozRGBfromHSV( float h, float s, float v)
 */
 inline NozRGB colorFrom256_OtherCam(int id) {
 
-    return NozRGBfromHSV(float(id), 1.0, 1.0);
+    return NozRGBfromHSV(float(id), 1.0f, 1.0f);
 
 }
 
@@ -804,14 +791,14 @@ inline NozLAB NozRGBtoLAB(const NozRGB& c)
     float x, y, z;
 
 
-    x = c.r * 0.41240000 + c.g * 0.35760000 + c.b * 0.18050000;
-    y = c.r * 0.21260000 + c.g * 0.71520000 + c.b * 0.07220000;
-    z = c.r * 0.01930000 + c.g * 0.11920000 + c.b * 0.95050000;
+    x = c.r * 0.41240000f + c.g * 0.35760000f + c.b * 0.18050000f;
+    y = c.r * 0.21260000f + c.g * 0.71520000f + c.b * 0.07220000f;
+    z = c.r * 0.01930000f + c.g * 0.11920000f + c.b * 0.95050000f;
 
 
-    x = x * 1.04257389 + y * 0.03089108 + z * -0.05281257;
-    y = x * 0.02219345 + y * 1.00185663 + z * -0.02107375;
-    z = x * -0.00116488 + y * -0.00342053 + z* 0.76178908;
+    x = x * 1.04257389f + y * 0.03089108f + z * -0.05281257f;
+    y = x * 0.02219345f + y * 1.00185663f + z * -0.02107375f;
+    z = x * -0.00116488f + y * -0.00342053f + z* 0.76178908f;
 
     float x_xn = x / CIE_X;
     float y_yn = y / CIE_Y;
@@ -821,9 +808,9 @@ inline NozLAB NozRGBtoLAB(const NozRGB& c)
     float f_y_yn = _XYZf(y_yn);
     float f_z_zn = _XYZf(z_zn);
 
-    out.l = nozMax(0.0, 116.0 * f_y_yn - 16.0);
-    out.a = 500.0 * (f_x_xn - f_y_yn);
-    out.b = 200.0 * (f_y_yn - f_z_zn);
+    out.l = nozMax(0.0f, 116.0f * f_y_yn - 16.0f);
+    out.a = 500.0f * (f_x_xn - f_y_yn);
+    out.b = 200.0f * (f_y_yn - f_z_zn);
 
     return out;
 
@@ -838,14 +825,14 @@ inline NozLAB NozRGBtoLAB(const NozRGBA& c)
     float x, y, z;
 
 
-    x = c.r * 0.41240000 + c.g * 0.35760000 + c.b * 0.18050000;
-    y = c.r * 0.21260000 + c.g * 0.71520000 + c.b * 0.07220000;
-    z = c.r * 0.01930000 + c.g * 0.11920000 + c.b * 0.95050000;
+    x = c.r * 0.41240000f + c.g * 0.35760000f + c.b * 0.18050000f;
+    y = c.r * 0.21260000f + c.g * 0.71520000f + c.b * 0.07220000f;
+    z = c.r * 0.01930000f + c.g * 0.11920000f + c.b * 0.95050000f;
 
 
-    x = x * 1.04257389 + y * 0.03089108 + z * -0.05281257;
-    y = x * 0.02219345 + y * 1.00185663 + z * -0.02107375;
-    z = x * -0.00116488 + y * -0.00342053 + z* 0.76178908;
+    x = x * 1.04257389f + y * 0.03089108f + z * -0.05281257f;
+    y = x * 0.02219345f + y * 1.00185663f + z * -0.02107375f;
+    z = x * -0.00116488f + y * -0.00342053f + z* 0.76178908f;
 
     float x_xn = x / CIE_X;
     float y_yn = y / CIE_Y;
@@ -855,9 +842,9 @@ inline NozLAB NozRGBtoLAB(const NozRGBA& c)
     float f_y_yn = _XYZf(y_yn);
     float f_z_zn = _XYZf(z_zn);
 
-    out.l = nozMax(0.0, 116.0 * f_y_yn - 16.0);
-    out.a = 500.0 * (f_x_xn - f_y_yn);
-    out.b = 200.0 * (f_y_yn - f_z_zn);
+    out.l = nozMax(0.0f, 116.0f * f_y_yn - 16.0f);
+    out.a = 500.0f * (f_x_xn - f_y_yn);
+    out.b = 200.0f * (f_y_yn - f_z_zn);
 
     return out;
 
@@ -877,9 +864,9 @@ inline float NozDeltaLAB(NozLAB lab1, NozLAB lab2)
     float deltaH = deltaLAB.a * deltaLAB.a + deltaLAB.b * deltaLAB.b - deltaC * deltaC;
     deltaH = deltaH < 0 ? 0 : sqrt(deltaH);
 
-    const float sl = 1.0;
-    const float kc = 1.0;
-    const float kh = 1.0;
+    const float sl = 1.0f;
+    const float kc = 1.0f;
+    const float kh = 1.0f;
 
     float sc = 1.0f + 0.45f * c1;
     float sh = 1.0f + 0.15f * c1;
@@ -898,19 +885,20 @@ inline float NozDeltaLAB(NozLAB lab1, NozLAB lab2)
 * \{
 */
 /// Black RGB
-#define NOZ_RGB_BLACK NozRGB(0.0f, 0.0f, 0.0f);
+
+static constexpr const NozRGB NOZ_RGB_BLACK (0.0f, 0.0f, 0.0f);
 /// Red RGB
-#define NOZ_RGB_RED NozRGB(1.0f, 0.0f, 0.0f);
+static constexpr const NozRGB NOZ_RGB_RED (1.0f, 0.0f, 0.0f);
 /// Green RGB
-#define NOZ_RGB_GREEN NozRGB(0.0f, 1.0f, 0.0f);
+static constexpr const NozRGB NOZ_RGB_GREEN (0.0f, 1.0f, 0.0f);
 /// Blue RGB
-#define NOZ_RGB_BLUE NozRGB(0.0f, 0.0f, 1.0f);
+static constexpr const NozRGB NOZ_RGB_BLUE (0.0f, 0.0f, 1.0f);
 /// White RGB
-#define NOZ_RGB_WHITE NozRGB(1.0f, 1.0f, 1.0f);
+static constexpr const NozRGB NOZ_RGB_WHITE (1.0f, 1.0f, 1.0f);
 /// Black RGBA
-#define NOZ_RGBA_BLACK NozRGBA(0.0f, 0.0f, 0.0f, 0.0f);
+static constexpr const NozRGBA NOZ_RGBA_BLACK (0.0f, 0.0f, 0.0f, 0.0f);
 /// White RGBA
-#define NOZ_RGBA_WHITE NozRGBA(1.0f, 1.0f, 1.0f, 1.0f);
+static constexpr const NozRGBA NOZ_RGBA_WHITE (1.0f, 1.0f, 1.0f, 1.0f);
 /*\}*/
 
 /*\}*/

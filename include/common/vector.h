@@ -502,7 +502,7 @@ inline double NozVecDist_d(const NozPoint2& p1, const NozPoint2& p2)
 */
 inline NozVector NozVecLerp(float t ,NozVector &a, NozVector &b)
 {
-    return ((1.0 - t) * a) + (b * t);
+    return ((1.0f - t) * a) + (b * t);
 }
 
 /*\}*/
@@ -622,12 +622,24 @@ inline NozVector NozVecCross(const NozVector& a, const NozVector& b)
 inline NozVector NozVecNormalize(const NozVector& a)
 {
     float tmp = NozVecLength(a);
-    if (tmp != 0.0)
-        tmp = 1.0 / tmp;
+    if (tmp != 0.0f)
+        tmp = 1.0f / tmp;
     NozVector out;
     out.x = a.x * tmp;
     out.y = a.y * tmp;
     out.z = a.z * tmp;
+    return out;
+}
+
+inline NozVector NozVecNormalize_d(const NozVector& a)
+{
+    double tmp = NozVecLength_d(a);
+    if (tmp != 0.0)
+        tmp = 1.0 / tmp;
+    NozVector out;
+    out.x = static_cast<float>((double)a.x * tmp);
+    out.y = static_cast<float>((double)a.y * tmp);
+    out.z = static_cast<float>((double)a.z * tmp);
     return out;
 }
 
@@ -642,9 +654,9 @@ inline bool NozVecIsSmall(const NozVector& a, float epsilon = NOZ_EPSILON)
 /**
 * Linear interpolate two vectors.  
 */
-inline NozVector NozVecLerp(const NozVector &va, const NozVector &vb, double alpha)
+inline NozVector NozVecLerp(const NozVector &va, const NozVector &vb, float alpha)
 {
-    return alpha * vb + (1 - alpha) * va;
+    return alpha * vb + (1.0f - alpha) * va;
 }
 
 //A normal is invalid if its values are infinite or extremely small
@@ -659,6 +671,13 @@ inline bool IsNormalInvalid(const NozPoint& normal)
     return false;
 }
 
+
+inline NozVector NozVecfaceforward(const NozVector& N, const NozVector& I) {
+    if(NozVecDot(N, I) < 0.0f)
+        return N;
+    else
+        return -N;
+}
 
 /*\}*/
 

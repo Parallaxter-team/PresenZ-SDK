@@ -41,10 +41,10 @@ inline NozMatrix getNozM4Identity() {
 
 
 inline void nozMatrix_set(NozMatrix &mout,
-                          double r00, double r01, double r02, double r03,
-                          double r10, double r11, double r12, double r13,
-                          double r20, double r21, double r22, double r23,
-                          double r30, double r31, double r32, double r33)
+                          float r00, float r01, float r02, float r03,
+    float r10, float r11, float r12, float r13,
+    float r20, float r21, float r22, float r23,
+    float r30, float r31, float r32, float r33)
 {
     mout[0][0] = r00;     mout[0][1] = r01;     mout[0][2] = r02;     mout[0][3] = r03;
     mout[1][0] = r10;     mout[1][1] = r11;     mout[1][2] = r12;     mout[1][3] = r13;
@@ -100,11 +100,11 @@ inline void NozM3VecByMatrixMult(NozVector &vout, const NozMatrix3 &mat, const N
     vout.z = mat[0][2] * vin.x + mat[1][2] * vin.y + mat[2][2] * vin.z;// + mat[3][2] * 0.0;
 }
 
-inline void NozM4RotationXYZ(const NozVector &up,  const double alpha, NozMatrix &mout)
+inline void NozM4RotationXYZ(const NozVector &up,  const float alpha, NozMatrix &mout)
 {
     const NozVector normalUp = NozVecNormalize(up);
-    double c = cos(alpha);
-    double s = sin(alpha);
+    float c = cos(alpha);
+    float s = sin(alpha);
     
     mout[0][0] = normalUp.x*normalUp.x * (1 - c) + c;
     mout[0][1] = normalUp.x*normalUp.y * (1 - c) - normalUp.z*s;
@@ -136,9 +136,9 @@ inline void NozM3Idendity(NozMatrix3 &mout){
 }
 
 inline void nozMatrix3_set(NozMatrix3 &mout,
-                            const double &r00, const double &r01, const double &r02,
-                            const double &r10, const double &r11, const double &r12,
-                            const double &r20, const double &r21, const double &r22)
+                            const float& r00, const float& r01, const float& r02,
+                            const float& r10, const float& r11, const float& r12,
+                            const float& r20, const float& r21, const float& r22)
 {
     mout[0][0] = r00;     mout[0][1] = r01;     mout[0][2] = r02;
     mout[1][0] = r10;     mout[1][1] = r11;     mout[1][2] = r12; 
@@ -163,9 +163,9 @@ inline void nozMat4inverse(const NozMatrix &min, NozMatrix &FloatResult)
     // Inversion by Cramer's rule.  Code taken from an Intel publication
     //
     NozMatrix Result;
-    double tmp[12]; /* temp array for pairs */
-    double src[16]; /* array of transpose source matrix */
-    double det; /* determinant */
+    float tmp[12]; /* temp array for pairs */
+    float src[16]; /* array of transpose source matrix */
+    float det; /* determinant */
     /* transpose matrix */
     for (size_t i = 0; i < 4; i++)
     {

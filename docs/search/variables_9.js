@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['minz_775',['minZ',['../struct_presen_z_1_1_camera_1_1v3__0_1_1_pz_camera_ray.html#a10783e24924a7160fed76c3a48530298',1,'PresenZ::Camera::v3_0::PzCameraRay']]]
+  ['l_0',['l',['../group___n_o_z___r_g_b_a.html#ga44d45276fbef0576bc73bcce99717251',1,'NozLAB']]]
 ];

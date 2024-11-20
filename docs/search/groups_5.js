@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['render_20sample_20interface_931',['Render Sample interface',['../group___render_sample.html',1,'']]]
+  ['logging_20interface_0',['Logging interface',['../group___pz_app_logger.html',1,'']]]
 ];

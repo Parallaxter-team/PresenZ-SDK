@@ -18,9 +18,9 @@
 inline float nozCubeRoot(float v)
 {
     if (v < 0)
-        return -pow(-v, 1 / 3.0);
+        return -pow(-v, 1 / 3.0f);
 
-    return pow(v, 1 / 3.);
+    return pow(v, 1 / 3.f);
 }
 
 /**
@@ -31,8 +31,8 @@ inline float nozCubeRoot(float v)
 template <typename T>
 int nozRound(T in)
 {
-    int result = in;
-    if ((in - 1.0*result)>0.5)
+    int result = (int)in;
+    if ((in - 1.0f*result)>0.5f)
         result++;
     return (result);
 }

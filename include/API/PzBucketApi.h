@@ -8,6 +8,8 @@
 #define _PzbucketAPI_h_
 
 #include "export.h"
+#include <vector>
+#include "PzRenderSampleApi.h"
 
 namespace PresenZ {
 namespace BinIO {
@@ -73,6 +75,17 @@ presenz_plugin_sdk_EXPORT bool PzProcessBucketFlushToFile(const size_t &bucketId
 /// @param[in] y1 bottom right y coordinate of the screen region corresponding to the bucket
 /// @return true if everything went fine
 presenz_plugin_sdk_EXPORT bool PzProcessBucketFlushToFile(const int &x0, const int &y0, const int &x1, const int &y1);
+
+
+/// @brief Flush the result to the disk, returns true if successful.
+/// @param[in] detectionsSamples samples returned by the function PzProcessDetectSample, using the SaveDataCallBack callback
+/// @return true if everything went fine
+presenz_plugin_sdk_EXPORT bool PzFlushSamplesToFile(std::vector<PresenZ::DetectSample::SaveDataStructure>& detectionsSamples);
+
+/// @brief Flush the result to the disk, returns true if successful.
+/// @param[in] samples filtered samples returned by the function PzFilterRenderSample
+/// @return true if everything went fine
+presenz_plugin_sdk_EXPORT bool PzFlushSamplesToFile(std::vector<PresenZ::RenderSample::PzFilteredSample>& samples);
 
 /// @brief This will go through all buckets and write any contained data to disk. Use this if the application is 
 /// terminating in an unexpected way.

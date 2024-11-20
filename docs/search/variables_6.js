@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['hit_767',['hit',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_ray_test_result.html#a9d3ba7a09d203fbcadc59723666e37fe',1,'PresenZ::DetectSample::v3_0::RayTestResult']]],
-  ['hitnormal_768',['hitNormal',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_detect_sample.html#a4c9257ffdd839b215aabfba5f05fa02e',1,'PresenZ::DetectSample::v3_0::PzDetectSample::hitNormal()'],['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_previous_detect_glass_sample.html#a89abeba874f4701e91ff5ad7601dd164',1,'PresenZ::DetectSample::v3_0::PzPreviousDetectGlassSample::hitNormal()']]],
-  ['hitpoint_769',['hitPoint',['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_detect_sample.html#a39246df9bccc12078d74da138ecfbfa4',1,'PresenZ::DetectSample::v3_0::PzDetectSample::hitPoint()'],['../struct_presen_z_1_1_detect_sample_1_1v3__0_1_1_pz_previous_detect_glass_sample.html#a39246df9bccc12078d74da138ecfbfa4',1,'PresenZ::DetectSample::v3_0::PzPreviousDetectGlassSample::hitPoint()']]]
+  ['g_0',['g',['../struct_presen_z_1_1_render_sample_1_1v4__0_1_1prz_a_o_v.html#a8cf17d727651616de6f2b79ef32170cd',1,'PresenZ::RenderSample::v4_0::przAOV::g'],['../group___n_o_z___r_g_b_a.html#ga8cf17d727651616de6f2b79ef32170cd',1,'NozRGB::g'],['../group___n_o_z___r_g_b_a.html#ga8cf17d727651616de6f2b79ef32170cd',1,'NozRGBA::g']]],
+  ['getmaterialname_1',['getMaterialName',['../struct_presen_z_1_1_cryptomatte_1_1v4__0_1_1_crypto_mattet_interface.html#a8fdf0ffe872d155877ba4dd2c4502807',1,'PresenZ::Cryptomatte::v4_0::CryptoMattetInterface']]],
+  ['getnodename_2',['getNodeName',['../struct_presen_z_1_1_cryptomatte_1_1v4__0_1_1_crypto_mattet_interface.html#a78577e9e6891ab4d2f6d2299e9a36165',1,'PresenZ::Cryptomatte::v4_0::CryptoMattetInterface']]]
 ];
