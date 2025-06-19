@@ -5,7 +5,7 @@ var hierarchy =
     [ "exception", null, [
       [ "Exception", "class_presen_z_1_1_util_1_1v4__1_1_1_exception.html", null ]
     ] ],
-    [ "PzFilteredSample::mainPixel", "struct_presen_z_1_1_render_sample_1_1v4__1_1_1_pz_filtered_sample_1_1main_pixel.html", null ],
+    [ "mainPixel", "struct_presen_z_1_1_render_sample_1_1v4__1_1_1_pz_filtered_sample_1_1main_pixel.html", null ],
     [ "NozLAB", "struct_noz_l_a_b.html", null ],
     [ "NozPoint", "struct_noz_point.html", null ],
     [ "NozPoint2", "struct_noz_point2.html", null ],

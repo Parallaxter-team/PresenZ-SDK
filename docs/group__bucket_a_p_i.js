@@ -1,14 +1,14 @@
 var group__bucket_a_p_i =
 [
-    [ "PzBucketFlushToMemory", "group__bucket_a_p_i.html#gace653bfad7f3a49a83669a1cef49ed9d", null ],
-    [ "PzBucketFlushToMemory", "group__bucket_a_p_i.html#ga2ca36cbe3c098dada87f27735d0dd5a4", null ],
-    [ "PzFlushMemoryBufferToFile", "group__bucket_a_p_i.html#ga58f8640159b10e98f85bede9f91d1c68", null ],
-    [ "PzFlushSamplesToFile", "group__bucket_a_p_i.html#ga50ddc5c12cc6e87e55b7971563ec7e7a", null ],
-    [ "PzFlushSamplesToFile", "group__bucket_a_p_i.html#gab5eb37ad3580deb7a5448b4bd4c7e72d", null ],
-    [ "PzInitBucket", "group__bucket_a_p_i.html#gac89c51d8d00e9934052276ecd10f0eda", null ],
-    [ "PzProcessAllBucketsToFile", "group__bucket_a_p_i.html#gaa7bd86f8733ac69bb40301fae63b7feb", null ],
-    [ "PzProcessBucketFlushToFile", "group__bucket_a_p_i.html#gaac96ec1f497d20deb0d2554355955175", null ],
-    [ "PzProcessBucketFlushToFile", "group__bucket_a_p_i.html#ga320af233cfba475666126c2082d16280", null ],
-    [ "PzProcessBucketGetBufferSize", "group__bucket_a_p_i.html#ga40014ff65f216bfdacb571b022a3bf1b", null ],
-    [ "PzProcessBucketGetBufferSize", "group__bucket_a_p_i.html#ga4fb5701bec739a406dd85cc2872192cc", null ]
+    [ "PzBucketFlushToMemory", "group__bucket_a_p_i.html#gaa1da604697c4cb863e4d4d46d874b8fb", null ],
+    [ "PzBucketFlushToMemory", "group__bucket_a_p_i.html#ga8c4bf8e7ee980a013396f738d1b23503", null ],
+    [ "PzFlushMemoryBufferToFile", "group__bucket_a_p_i.html#ga83b191cabc501e07a09a470e4fa5c9dd", null ],
+    [ "PzFlushSamplesToFile", "group__bucket_a_p_i.html#ga4576780aee9296d244bc5c929b5cae92", null ],
+    [ "PzFlushSamplesToFile", "group__bucket_a_p_i.html#ga59b2a35c2043cf9605240ab5a34e855f", null ],
+    [ "PzInitBucket", "group__bucket_a_p_i.html#gafe1645a695f8bebb0cc0ec8d319ead5a", null ],
+    [ "PzProcessAllBucketsToFile", "group__bucket_a_p_i.html#gaa4ed3ca9925f6556bd64c9454ef9050d", null ],
+    [ "PzProcessBucketFlushToFile", "group__bucket_a_p_i.html#ga641449af3dffba87b300ec4c85662277", null ],
+    [ "PzProcessBucketFlushToFile", "group__bucket_a_p_i.html#gac131bd2c254eac1badac0375eb5f082e", null ],
+    [ "PzProcessBucketGetBufferSize", "group__bucket_a_p_i.html#gab18c57ae8beac82eb5a77bd20806e0ca", null ],
+    [ "PzProcessBucketGetBufferSize", "group__bucket_a_p_i.html#ga9f7434b72156e7b978c4cf1000e5bbc9", null ]
 ];

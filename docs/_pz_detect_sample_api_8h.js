@@ -1,11 +1,11 @@
 var _pz_detect_sample_api_8h =
 [
-    [ "PreviousHitDataCallBack", "_pz_detect_sample_api_8h.html#gab5fcb859650db26bef9b05786bdcf088", null ],
-    [ "QueryFlagsCallback", "_pz_detect_sample_api_8h.html#gaed0e87834ec9435d9139b49854cce6e1", null ],
-    [ "RayTestCallback", "_pz_detect_sample_api_8h.html#ga1a37e5375bf0b644415a664036448859", null ],
-    [ "SaveDataCallBack", "_pz_detect_sample_api_8h.html#gab926344062608965e65cc5afe428df2d", null ],
-    [ "PzGetScanCam", "_pz_detect_sample_api_8h.html#ga15d3f4b9d17b78618dee24af8a733c83", null ],
-    [ "PzIsAtProximity", "_pz_detect_sample_api_8h.html#ga1177eb6da5716c2172e58675a53b36c3", null ],
-    [ "PzMatchSampleIndex", "_pz_detect_sample_api_8h.html#gae8232121c525cb245371920f76a19b98", null ],
-    [ "PzProcessDetectSample", "_pz_detect_sample_api_8h.html#ga0cca44a660fba1c326e072afabdb2d9a", null ]
+    [ "PreviousHitDataCallBack", "_pz_detect_sample_api_8h.html#gad1c11e248016b9fe84bee9d776e2af39", null ],
+    [ "QueryFlagsCallback", "_pz_detect_sample_api_8h.html#ga07e2e197bc32f2fdc41b100d42b84483", null ],
+    [ "RayTestCallback", "_pz_detect_sample_api_8h.html#ga900fa23c41aea75a5070981316106f3b", null ],
+    [ "SaveDataCallBack", "_pz_detect_sample_api_8h.html#ga1515cf5439658e4351c3a3d106ff8087", null ],
+    [ "PzGetScanCam", "_pz_detect_sample_api_8h.html#gafe6d62e3d75c22f285d226b751669f4f", null ],
+    [ "PzIsAtProximity", "_pz_detect_sample_api_8h.html#ga4c07cf8ac11a3ab67169989cb844ea74", null ],
+    [ "PzMatchSampleIndex", "_pz_detect_sample_api_8h.html#gaac4c7d95f316fc322a4cc36dd5b09e58", null ],
+    [ "PzProcessDetectSample", "_pz_detect_sample_api_8h.html#ga50a309149dfd3120e636960a329bba53", null ]
 ];
