@@ -1,18 +1,18 @@
 var _pz_shading_api_8h =
 [
-    [ "getBendRayDerivative_cameraSpace", "_pz_shading_api_8h.html#ga6ce8bf360d804dddc5cc7ed04420c2ff", null ],
-    [ "PzDistanceFromCamera", "_pz_shading_api_8h.html#ga1e99bb03e88c6affaf328c05cfbdea08", null ],
-    [ "PzGetBendRayRenderPhase", "_pz_shading_api_8h.html#ga9a10ffb1a165223f8d0bbca148160306", null ],
-    [ "PzGetBendRayRenderPhase", "_pz_shading_api_8h.html#ga912fcf8b7c785ab9694088699ea26fe8", null ],
-    [ "PzGetBestCameraWSPosition", "_pz_shading_api_8h.html#ga68ddb9e076ae6fec33b50e3ae245142e", null ],
-    [ "PzGetDoubleReflectanceTransmitance", "_pz_shading_api_8h.html#gac8347da118627d5dcc5e6c2bb06b4a46", null ],
-    [ "PzGetPixelCoordinates", "_pz_shading_api_8h.html#ga32e916e803525c250e7f4121b5f42af7", null ],
-    [ "PzGetReflectionDirection", "_pz_shading_api_8h.html#gaa8c36f788a18579cb981999e1c3541e5", null ],
-    [ "PzGetRenderingResolution", "_pz_shading_api_8h.html#ga812673fa2416a14c90f2d32818b00af0", null ],
-    [ "PzGetTranspRayRenderPhase", "_pz_shading_api_8h.html#gad5119ee98c3b5d98d6ed150158329f3a", null ],
-    [ "PzGetXYInPixelPosition", "_pz_shading_api_8h.html#ga5414e03628523cb82f83ea25de2a4797", null ],
-    [ "PzIsTransparent", "_pz_shading_api_8h.html#gad4b6c7df33253da82437ec1be88f6f63", null ],
-    [ "PzIsValidEvaluation", "_pz_shading_api_8h.html#gaaf3dc36dbde17e31135afc1c646c919b", null ],
-    [ "PzShouldProbe", "_pz_shading_api_8h.html#ga9922af7ea6cfc74677115036976e0e50", null ],
-    [ "PzShouldShade", "_pz_shading_api_8h.html#ga8be962a3456154722009774be47f9834", null ]
+    [ "getBendRayDerivative_cameraSpace", "_pz_shading_api_8h.html#ga569d72d7e57e371b35990ee795da0490", null ],
+    [ "PzDistanceFromCamera", "_pz_shading_api_8h.html#gacfc0f4e9a6bd52be4a203b7005003c75", null ],
+    [ "PzGetBendRayRenderPhase", "_pz_shading_api_8h.html#gacaa41d3befa6df73d9b111e6b2e5a935", null ],
+    [ "PzGetBendRayRenderPhase", "_pz_shading_api_8h.html#ga04589657d02f225616709d14f89968a2", null ],
+    [ "PzGetBestCameraWSPosition", "_pz_shading_api_8h.html#gaa02e80ddd91d3172a0bbef5fbd02ffec", null ],
+    [ "PzGetDoubleReflectanceTransmitance", "_pz_shading_api_8h.html#gafc54c0521038f6a9f941ef7034e3b10e", null ],
+    [ "PzGetPixelCoordinates", "_pz_shading_api_8h.html#gaf2bfef182917f383983c8dead2df3440", null ],
+    [ "PzGetReflectionDirection", "_pz_shading_api_8h.html#ga7500ab447a9bd7a0fbfa925373d437ef", null ],
+    [ "PzGetRenderingResolution", "_pz_shading_api_8h.html#gab9d7b3f42199457436fcd73ebdb454f2", null ],
+    [ "PzGetTranspRayRenderPhase", "_pz_shading_api_8h.html#ga55a97abbc4781a5987887c26c7a26512", null ],
+    [ "PzGetXYInPixelPosition", "_pz_shading_api_8h.html#ga61f6e3d14eda73649838d664e3f8b165", null ],
+    [ "PzIsTransparent", "_pz_shading_api_8h.html#ga4cd0ff724cd116e45451e6db8f481536", null ],
+    [ "PzIsValidEvaluation", "_pz_shading_api_8h.html#ga46b99da06dfd3ad42a3511f678e206db", null ],
+    [ "PzShouldProbe", "_pz_shading_api_8h.html#ga428c89e32f71fd3dd6013935148f6405", null ],
+    [ "PzShouldShade", "_pz_shading_api_8h.html#ga30c24504061fb1f4e216b32eced47caa", null ]
 ];

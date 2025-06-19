@@ -51,12 +51,12 @@ var group___pz_detect_sample_api =
       [ "sampleIndex", "struct_presen_z_1_1_detect_sample_1_1v4__1_1_1_pz_detect_sample.html#a5c8e9b74c2fe744a9c5d3a12d81850cf", null ],
       [ "transpType", "struct_presen_z_1_1_detect_sample_1_1v4__1_1_1_pz_detect_sample.html#ae89f8742850b3f5fb55f23ccf9a55d86", null ]
     ] ],
-    [ "PreviousHitDataCallBack", "group___pz_detect_sample_api.html#gad1c11e248016b9fe84bee9d776e2af39", null ],
-    [ "QueryFlagsCallback", "group___pz_detect_sample_api.html#ga07e2e197bc32f2fdc41b100d42b84483", null ],
-    [ "RayTestCallback", "group___pz_detect_sample_api.html#ga900fa23c41aea75a5070981316106f3b", null ],
-    [ "SaveDataCallBack", "group___pz_detect_sample_api.html#ga1515cf5439658e4351c3a3d106ff8087", null ],
-    [ "PzGetScanCam", "group___pz_detect_sample_api.html#gafe6d62e3d75c22f285d226b751669f4f", null ],
-    [ "PzIsAtProximity", "group___pz_detect_sample_api.html#ga4c07cf8ac11a3ab67169989cb844ea74", null ],
-    [ "PzMatchSampleIndex", "group___pz_detect_sample_api.html#gaac4c7d95f316fc322a4cc36dd5b09e58", null ],
-    [ "PzProcessDetectSample", "group___pz_detect_sample_api.html#ga50a309149dfd3120e636960a329bba53", null ]
+    [ "PreviousHitDataCallBack", "group___pz_detect_sample_api.html#gab5fcb859650db26bef9b05786bdcf088", null ],
+    [ "QueryFlagsCallback", "group___pz_detect_sample_api.html#gaed0e87834ec9435d9139b49854cce6e1", null ],
+    [ "RayTestCallback", "group___pz_detect_sample_api.html#ga1a37e5375bf0b644415a664036448859", null ],
+    [ "SaveDataCallBack", "group___pz_detect_sample_api.html#gab926344062608965e65cc5afe428df2d", null ],
+    [ "PzGetScanCam", "group___pz_detect_sample_api.html#ga15d3f4b9d17b78618dee24af8a733c83", null ],
+    [ "PzIsAtProximity", "group___pz_detect_sample_api.html#ga1177eb6da5716c2172e58675a53b36c3", null ],
+    [ "PzMatchSampleIndex", "group___pz_detect_sample_api.html#gae8232121c525cb245371920f76a19b98", null ],
+    [ "PzProcessDetectSample", "group___pz_detect_sample_api.html#ga0cca44a660fba1c326e072afabdb2d9a", null ]
 ];

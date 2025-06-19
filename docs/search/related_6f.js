@@ -1,0 +1,6 @@
+var searchData=
+[
+  ['operator_2a',['operator*',['../struct_noz_r_g_b.html#ab07d375965e60600208df47e5db26bd4',1,'NozRGB::operator*()'],['../struct_noz_r_g_b_a.html#afd32863545295d7f0bbb796745d7d184',1,'NozRGBA::operator*()'],['../struct_noz_point.html#aae2d4ba1f54963306b785ff628b7812e',1,'NozPoint::operator*()'],['../struct_noz_point2.html#ae82a48975e4fa83a2edc4ee0a66bc0e7',1,'NozPoint2::operator*()']]],
+  ['operator_2b',['operator+',['../struct_noz_r_g_b.html#a8dc131da25d1aab5adff4aa9f66323d0',1,'NozRGB::operator+()'],['../struct_noz_r_g_b_a.html#ac26c16b11c49e01e0556c35b8997429f',1,'NozRGBA::operator+()'],['../struct_noz_point.html#aa409c2438da160b5c872e28f795e36d0',1,'NozPoint::operator+()'],['../struct_noz_point2.html#a8556328bef58e748fd6653736e45f927',1,'NozPoint2::operator+()']]],
+  ['operator_2d',['operator-',['../struct_noz_r_g_b.html#ad061e7f484539b6ab29d58c1fe50860e',1,'NozRGB::operator-()'],['../struct_noz_r_g_b_a.html#acd594bfc83c7a9f5814cb1d8a89c9f54',1,'NozRGBA::operator-()'],['../struct_noz_point.html#aac17c90c41668eb144502ebe8d253898',1,'NozPoint::operator-()'],['../struct_noz_point2.html#aa8d9e2b92f11ac2e9f76226e9c1f6b45',1,'NozPoint2::operator-()']]]
+];
