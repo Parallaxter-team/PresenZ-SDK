@@ -5,6 +5,7 @@ var matrix_8h =
     [ "getNozM4Identity", "matrix_8h.html#a5ac8a8e0db5b1184d459544150af88ac", null ],
     [ "getNozPointByMatrixMult", "matrix_8h.html#ac90ce9c808c99182cd53e2ff79f3153a", null ],
     [ "getNozVecByMatrixMult", "matrix_8h.html#a0d857cee093f27bb8b3be8736acb433c", null ],
+    [ "isNozM4Identity", "matrix_8h.html#a50a9b90056a2d7f5e334189e001eed6e", null ],
     [ "NozM3Idendity", "matrix_8h.html#a1e9b783791ccb5b5c9861e3e8b27bbb8", null ],
     [ "NozM3VecByMatrixMult", "matrix_8h.html#a4002f199c3abd4f2cc30b94e32ac1e44", null ],
     [ "NozM4_MatrixByMatrixMult", "matrix_8h.html#a23cb5f6996da249863f8d1b5065e6c3c", null ],

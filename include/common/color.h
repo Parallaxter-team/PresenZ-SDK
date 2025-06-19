@@ -531,6 +531,10 @@ struct NozRGBA
     friend NozRGBA operator*(float f, const NozRGBA& rgba);
     friend NozRGBA operator+(float f, const NozRGBA& rgba);
     friend NozRGBA operator-(float f, const NozRGBA& rgba);
+
+    bool isBlack() const {
+        return (r < NOZ_EPSILON && g < NOZ_EPSILON && b < NOZ_EPSILON && a < NOZ_EPSILON);
+    }
 };
 /// multiply operator
 inline NozRGBA operator*(float f, const NozRGBA& rgba)
@@ -795,11 +799,6 @@ inline NozLAB NozRGBtoLAB(const NozRGB& c)
     y = c.r * 0.21260000f + c.g * 0.71520000f + c.b * 0.07220000f;
     z = c.r * 0.01930000f + c.g * 0.11920000f + c.b * 0.95050000f;
 
-
-    x = x * 1.04257389f + y * 0.03089108f + z * -0.05281257f;
-    y = x * 0.02219345f + y * 1.00185663f + z * -0.02107375f;
-    z = x * -0.00116488f + y * -0.00342053f + z* 0.76178908f;
-
     float x_xn = x / CIE_X;
     float y_yn = y / CIE_Y;
     float z_zn = z / CIE_Z;
@@ -824,15 +823,9 @@ inline NozLAB NozRGBtoLAB(const NozRGBA& c)
     NozLAB out;
     float x, y, z;
 
-
     x = c.r * 0.41240000f + c.g * 0.35760000f + c.b * 0.18050000f;
     y = c.r * 0.21260000f + c.g * 0.71520000f + c.b * 0.07220000f;
     z = c.r * 0.01930000f + c.g * 0.11920000f + c.b * 0.95050000f;
-
-
-    x = x * 1.04257389f + y * 0.03089108f + z * -0.05281257f;
-    y = x * 0.02219345f + y * 1.00185663f + z * -0.02107375f;
-    z = x * -0.00116488f + y * -0.00342053f + z* 0.76178908f;
 
     float x_xn = x / CIE_X;
     float y_yn = y / CIE_Y;

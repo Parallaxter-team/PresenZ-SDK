@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 // All rights reserved.
 #ifndef _PzRenderSampleAPI_h_
 #define _PzRenderSampleAPI_h_
@@ -97,7 +97,8 @@ namespace PRESENZ_VERSION_NS {
         uint32_t cockpit : 1; 
         uint32_t transp : 2;   // 0 : opaque ; 1 : transpGlass ; 2 : stencil//not implemented
         uint32_t depth : 5;    // up to 31 depths 
-        uint32_t voxtrum : 1;  // not set at sample level but at pixel level ( after clustering )  
+        uint32_t voxtrum : 1;  
+        uint32_t volumetric : 1; 
     };
 
     ///@brief AOVData union
@@ -132,7 +133,7 @@ namespace PRESENZ_VERSION_NS {
     ///@brief Data containing all relevant information regarding a shading phase sample
     struct PzRenderSample
     {
-        inline PzRenderSample() : pos(0.f, 0.f, 0.f), normal(0.f, 0.f, 0.f), RGBA(0.f, 0.f, 0.f, 0.f), z(0.0), inPixelPosXY(nozPoint2(0., 0.))
+        inline PzRenderSample() : pos(0.f, 0.f, 0.f), normal(0.f, 0.f, 0.f), RGBA(0.f, 0.f, 0.f, 0.f), z(0.0), inPixelPosXY(nozPoint2(0., 0.)), depth(0) 
         {
             PzInitSampleAov(*this);
         }
@@ -146,6 +147,8 @@ namespace PRESENZ_VERSION_NS {
         NozVector2 inPixelPosXY;
 		/// depth (Z)
         double z;
+        /// depth
+        unsigned int depth;
         /// Extra values per sample
         std::vector<AOVData> AOVs;
     };

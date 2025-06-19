@@ -1,9 +1,9 @@
 var searchData=
 [
-  ['table_20of_20contents_0',['Table of Contents',['../index.html#autotoc_md59',1,'']]],
+  ['table_20of_20contents_0',['Table of Contents',['../index.html#autotoc_md63',1,'']]],
   ['tags_1',['6.2 Easy detection of transparent geometry with tags',['../transparencies.html#autotoc_md37',1,'']]],
   ['target_20viewed_20location_20from_20a_20custom_20viewpoint_2',['2.1.6 Shade a target viewed location from a custom viewpoint',['../requirements.html#autotoc_md9',1,'']]],
-  ['terminatephaseoptions_3',['TerminatePhaseOptions',['../group___pz_phase_api.html#gab309d51e14d4933eb0650d09120e07bf',1,'PresenZ::Phase::v4_0']]],
+  ['terminatephaseoptions_3',['TerminatePhaseOptions',['../group___pz_phase_api.html#gab309d51e14d4933eb0650d09120e07bf',1,'PresenZ::Phase::v4_1']]],
   ['termination_4',['Termination',['../init_termination.html#autotoc_md22',1,'3.4 Phase Begin and Termination'],['../init_termination.html',1,'Initialization/Termination'],['../group__bucket_a_p_i.html#Intro',1,'Initialization/Termination']]],
   ['test_20callback_20function_5',['4.1.3 Creating a hit test callback function',['../phases.html#autotoc_md26',1,'']]],
   ['test_20callback_20function_20to_20presenz_6',['4.1.3 Passing the hit test callback function to PresenZ',['../phases.html#autotoc_md27',1,'']]],
@@ -26,12 +26,12 @@ var searchData=
   ['to_20redefine_20ray_20origin_20direction_20and_20optionally_20derivatives_23',['2.1.4 Ability to redefine ray origin/direction (and optionally derivatives)',['../requirements.html#autotoc_md7',1,'']]],
   ['to_20shade_20twice_20in_20a_20row_20from_20different_20viewpoint_24',['2.2.3 Ability to shade twice in a row from different viewpoint',['../requirements.html#autotoc_md13',1,'']]],
   ['to_20start_20a_20few_20renders_20in_20a_20row_25',['2.1.2 Ability to start a few renders in a row',['../requirements.html#autotoc_md5',1,'']]],
-  ['transp_26',['transp',['../struct_presen_z_1_1_render_sample_1_1v4__0_1_1prz_a_o_v.html#a726da5cbfcac0226f9e2795e44047280',1,'PresenZ::RenderSample::v4_0::przAOV']]],
+  ['transp_26',['transp',['../struct_presen_z_1_1_render_sample_1_1v4__1_1_1prz_a_o_v.html#a726da5cbfcac0226f9e2795e44047280',1,'PresenZ::RenderSample::v4_1::przAOV']]],
   ['transparency_27',['Transparency',['../transparencies.html',1,'']]],
   ['transparencyrenderingtype_28',['TransparencyRenderingType',['../namespace_presen_z_1_1_phase_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html#a36a74ae11377f0edba8dcb5070390a4d',1,'PresenZ::Phase::PRESENZ_VERSION_NS']]],
   ['transparent_20geometry_29',['6.3 Referencing transparent geometry',['../transparencies.html#autotoc_md38',1,'']]],
   ['transparent_20geometry_20with_20tags_30',['6.2 Easy detection of transparent geometry with tags',['../transparencies.html#autotoc_md37',1,'']]],
-  ['transptype_31',['transpType',['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_save_data_structure.html#ac132759c29737e9daf6c071e2d49db6b',1,'PresenZ::DetectSample::v4_0::SaveDataStructure::transpType'],['../struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_pz_detect_sample.html#ae89f8742850b3f5fb55f23ccf9a55d86',1,'PresenZ::DetectSample::v4_0::PzDetectSample::transpType']]],
+  ['transptype_31',['transpType',['../struct_presen_z_1_1_detect_sample_1_1v4__1_1_1_save_data_structure.html#ac132759c29737e9daf6c071e2d49db6b',1,'PresenZ::DetectSample::v4_1::SaveDataStructure::transpType'],['../struct_presen_z_1_1_detect_sample_1_1v4__1_1_1_pz_detect_sample.html#ae89f8742850b3f5fb55f23ccf9a55d86',1,'PresenZ::DetectSample::v4_1::PzDetectSample::transpType']]],
   ['twice_20in_20a_20row_20from_20different_20viewpoint_32',['2.2.3 Ability to shade twice in a row from different viewpoint',['../requirements.html#autotoc_md13',1,'']]],
   ['types_2eh_33',['types.h',['../types_8h.html',1,'']]]
 ];

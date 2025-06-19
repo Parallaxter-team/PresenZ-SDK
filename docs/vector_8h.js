@@ -33,5 +33,7 @@ var vector_8h =
     [ "operator+", "group___n_o_z__vector.html#gaa409c2438da160b5c872e28f795e36d0", null ],
     [ "operator+", "group___n_o_z__vector.html#ga8556328bef58e748fd6653736e45f927", null ],
     [ "operator-", "group___n_o_z__vector.html#gaac17c90c41668eb144502ebe8d253898", null ],
-    [ "operator-", "group___n_o_z__vector.html#gaa8d9e2b92f11ac2e9f76226e9c1f6b45", null ]
+    [ "operator-", "group___n_o_z__vector.html#gaa8d9e2b92f11ac2e9f76226e9c1f6b45", null ],
+    [ "operator<<", "group___n_o_z__vector.html#ga8e07ebec19ac95f44a86c358c74fe30b", null ],
+    [ "operator<<", "group___n_o_z__vector.html#ga4c11ae625bcb4c4a93a2d0a18d12d344", null ]
 ];

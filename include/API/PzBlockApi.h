@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 // All rights reserved.
 #ifndef _PzBlockAPI_h_
 #define _PzBlockAPI_h_

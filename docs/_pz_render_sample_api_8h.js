@@ -1,6 +1,6 @@
 var _pz_render_sample_api_8h =
 [
-    [ "mainPixel", "struct_presen_z_1_1_render_sample_1_1v4__0_1_1_pz_filtered_sample_1_1main_pixel.html", "struct_presen_z_1_1_render_sample_1_1v4__0_1_1_pz_filtered_sample_1_1main_pixel" ],
+    [ "mainPixel", "struct_presen_z_1_1_render_sample_1_1v4__1_1_1_pz_filtered_sample_1_1main_pixel.html", "struct_presen_z_1_1_render_sample_1_1v4__1_1_1_pz_filtered_sample_1_1main_pixel" ],
     [ "PzAddCockpitSampleAov", "_pz_render_sample_api_8h.html#gae93601c70246143cdb201192517ccdf2", null ],
     [ "PzAddGlassSampleAov", "_pz_render_sample_api_8h.html#gab1f9d16753fb9da84735c3138032ef97", null ],
     [ "PzAddMirrorSampleAov", "_pz_render_sample_api_8h.html#gae29e893f6a789d3bf96d6be61aa3f586", null ],

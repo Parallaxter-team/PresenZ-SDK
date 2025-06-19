@@ -25,8 +25,8 @@
 var NAVTREE =
 [
   [ "PresenZ SDK", "index.html", [
-    [ "PresenZ plugin SDK - Programmer Manual", "index.html#autotoc_md58", [
-      [ "Table of Contents", "index.html#autotoc_md59", null ]
+    [ "PresenZ plugin SDK - Programmer Manual", "index.html#autotoc_md62", [
+      [ "Table of Contents", "index.html#autotoc_md63", null ]
     ] ],
     [ "General flow", "flow.html", [
       [ "1.1 Detection Phase", "flow.html#autotoc_md0", null ],
@@ -115,7 +115,11 @@ var NAVTREE =
       [ "10.2 AOV shader", "arnold.html#autotoc_md54", null ],
       [ "10.3 Intersection shader", "arnold.html#autotoc_md55", null ],
       [ "10.4 Filter", "arnold.html#autotoc_md56", null ],
-      [ "10.5 Driver", "arnold.html#autotoc_md57", null ]
+      [ "10.5 Driver", "arnold.html#autotoc_md57", null ],
+      [ "10.6 Operator", "arnold.html#autotoc_md58", null ],
+      [ "10.7 Shader Operator", "arnold.html#autotoc_md59", null ],
+      [ "10.8 Geometry Procedural", "arnold.html#autotoc_md60", null ],
+      [ "10.9 Loader", "arnold.html#autotoc_md61", null ]
     ] ],
     [ "Support", "support.html", null ],
     [ "Deprecated List", "deprecated.html", null ],
@@ -153,9 +157,9 @@ var NAVTREE =
 var NAVTREEINDEX =
 [
 "_pz_app_logger_8h.html",
-"group___n_o_z___r_g_b_a.html#ga4788d82c901b9367dd5c0daff8a7616b",
-"group___pz_phase_api.html#ga59c42493e6b8e40e92057362065715e1",
-"struct_presen_z_1_1_detect_sample_1_1v4__0_1_1_save_data_structure.html#ac66c2e837c24a5cd822b7b42ed61558d"
+"group___n_o_z___r_g_b_a.html#ga32c7bd958b8b03d672919f921f408328",
+"group___pz_detect_sample_api.html#gaac4c7d95f316fc322a4cc36dd5b09e58",
+"struct_presen_z_1_1_detect_sample_1_1v4__1_1_1_ray_test_interface.html"
 ];
 
 var SYNCONMSG = 'click to disable panel synchronisation';

@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PresenZ SDK: PresenZ4.0.6_Windows/include/API/PzAssert.h File Reference</title>
+<title>PresenZ SDK: PresenZ4.1.0_Windows/include/API/PzAssert.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PresenZ SDK<span id="projectnumber">&#160;4.0.6</span>
+   <div id="projectname">PresenZ SDK<span id="projectnumber">&#160;4.1.0</span>
    </div>
   </td>
  </tr>
@@ -100,14 +100,17 @@ $(function(){initNavTree('_pz_assert_8h.html',''); initResizable(); });
 <p>Several helper macros for validating and debugging using <a class="el" href="namespace_presen_z.html">PresenZ</a> logging system.  
 <a href="#details">More...</a></p>
 <div class="textblock"><code>#include &quot;<a class="el" href="_pz_app_logger_8h_source.html">PzAppLogger.h</a>&quot;</code><br />
+<code>#include &lt;signal.h&gt;</code><br />
 </div>
 <p><a href="_pz_assert_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a id="define-members" name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:a20b308917b25888d7c05e0854eb1acdb" id="r_a20b308917b25888d7c05e0854eb1acdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20b308917b25888d7c05e0854eb1acdb">PZ_BREAK</a>()&#160;&#160;&#160;do { throw std::exception(); } while(0)</td></tr>
+<tr class="memitem:a20b308917b25888d7c05e0854eb1acdb" id="r_a20b308917b25888d7c05e0854eb1acdb"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a20b308917b25888d7c05e0854eb1acdb">PZ_BREAK</a>()&#160;&#160;&#160;raise(SIGTRAP)</td></tr>
 <tr class="memdesc:a20b308917b25888d7c05e0854eb1acdb"><td class="mdescLeft">&#160;</td><td class="mdescRight">Trigger an Interruption 3/Hardware debug (windows only, will invoke abort() on other systems).  <br /></td></tr>
 <tr class="separator:a20b308917b25888d7c05e0854eb1acdb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aef8128123194486e86b6e484fd95f665" id="r_aef8128123194486e86b6e484fd95f665"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#aef8128123194486e86b6e484fd95f665">PZ_DEBUGBREAK</a>(...)</td></tr>
+<tr class="separator:aef8128123194486e86b6e484fd95f665"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab8d42c3a36274433e8600869cbc9df6a" id="r_ab8d42c3a36274433e8600869cbc9df6a"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#ab8d42c3a36274433e8600869cbc9df6a">PZ_ASSERT</a>(condition,  message, ...)&#160;&#160;&#160;{ if(!(condition)) { <a class="el" href="group___pz_app_logger.html#gafd8b815a0f76d6b121f44f62d5730ee4">PZ_ERROR</a>(message, ##__VA_ARGS__); <a class="el" href="#a20b308917b25888d7c05e0854eb1acdb">PZ_BREAK</a>(); } }</td></tr>
 <tr class="memdesc:ab8d42c3a36274433e8600869cbc9df6a"><td class="mdescLeft">&#160;</td><td class="mdescRight">This one is used for invariants: condition is supposed to always be true.  <br /></td></tr>
 <tr class="separator:ab8d42c3a36274433e8600869cbc9df6a"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -165,13 +168,33 @@ Macros</h2></td></tr>
           <td class="memname">#define PZ_BREAK</td>
           <td>(</td>
           <td class="paramname"><span class="paramname"></span></td><td>)</td>
-          <td>&#160;&#160;&#160;do { throw std::exception(); } while(0)</td>
+          <td>&#160;&#160;&#160;raise(SIGTRAP)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 <p>Trigger an Interruption 3/Hardware debug (windows only, will invoke abort() on other systems). </p>
 
+</div>
+</div>
+<a id="aef8128123194486e86b6e484fd95f665" name="aef8128123194486e86b6e484fd95f665"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aef8128123194486e86b6e484fd95f665">&#9670;&#160;</a></span>PZ_DEBUGBREAK</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define PZ_DEBUGBREAK</td>
+          <td>(</td>
+          <td class="paramtype"></td>          <td class="paramname"><span class="paramname"><em>...</em></span></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<b>Value:</b><div class="fragment"><div class="line">    <span class="keywordflow">if</span> ((__VA_ARGS__)) { \</div>
+<div class="line">        PZ_BREAK(); \</div>
+<div class="line">    }</div>
+</div><!-- fragment -->
 </div>
 </div>
 <a id="ab209cb87b907dcc2cc6d7926315a184f" name="ab209cb87b907dcc2cc6d7926315a184f"></a>
@@ -263,7 +286,7 @@ Macros</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a2bcd2fdd2c5a3c01789c538633b718e.html">PresenZ4.0.6_Windows</a></li><li class="navelem"><a class="el" href="dir_001f9f82d72210972e430b92fe324fd3.html">include</a></li><li class="navelem"><a class="el" href="dir_c21dbd54f40fc98e1d5ab74b70c69c70.html">API</a></li><li class="navelem"><a class="el" href="_pz_assert_8h.html">PzAssert.h</a></li>
+    <li class="navelem"><a class="el" href="dir_a88012d84d33beb4933417172d4cb153.html">PresenZ4.1.0_Windows</a></li><li class="navelem"><a class="el" href="dir_424e1836d9359f565fb0040b024e8e2c.html">include</a></li><li class="navelem"><a class="el" href="dir_cb8128c215e9a4a2c05e00cbde5d1832.html">API</a></li><li class="navelem"><a class="el" href="_pz_assert_8h.html">PzAssert.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

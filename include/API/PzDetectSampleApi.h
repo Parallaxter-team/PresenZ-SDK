@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 // All rights reserved.
 
 /// \file PzDetectSampleApi.h
@@ -63,7 +63,7 @@ namespace PRESENZ_VERSION_NS {
         bool isHair;
         bool isDraft;
         bool isChaotic;
-        bool isFrustrum;
+        bool isVolumetric;
         uint8_t expSize;
         uint8_t transpType;
         float z;
@@ -115,11 +115,13 @@ namespace PRESENZ_VERSION_NS {
     ///\brief PzDetectSample defines the structure of a detection sample. 
     struct PzDetectSample
     {
-        inline PzDetectSample() : isHair(false), isChaotic(false), pixelX(0), pixelY(0), sampleIndex(0), transpType(DST_opaque) {}
+        inline PzDetectSample() : isHair(false), isChaotic(false), isVolumetric(false), pixelX(0), pixelY(0), sampleIndex(0), transpType(DST_opaque) {}
 		/// Is the hit object tagged as hair.
         bool isHair;
         /// Is the hit object a chaotic geometry
         bool isChaotic;
+        /// Is the hit object a volumetric
+        bool isVolumetric;
 		/// Render image x coordinate.
         int pixelX;
 		/// Render image y coordinate.

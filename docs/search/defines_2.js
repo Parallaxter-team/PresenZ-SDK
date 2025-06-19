@@ -12,7 +12,8 @@ var searchData=
   ['pz_5fassert_9',['PZ_ASSERT',['../_pz_assert_8h.html#ab8d42c3a36274433e8600869cbc9df6a',1,'PzAssert.h']]],
   ['pz_5fbreak_10',['PZ_BREAK',['../_pz_assert_8h.html#a20b308917b25888d7c05e0854eb1acdb',1,'PzAssert.h']]],
   ['pz_5fcrypto_5fmax_5fstring_5flength_11',['PZ_CRYPTO_MAX_STRING_LENGTH',['../_pz_cryptomatte_api_8h.html#a52a3717199fbc540c58210f997fb8bc6',1,'PzCryptomatteApi.h']]],
-  ['pz_5ferror_5ftest_12',['PZ_ERROR_TEST',['../_pz_assert_8h.html#ab209cb87b907dcc2cc6d7926315a184f',1,'PzAssert.h']]],
-  ['pz_5fwarning_5ftest_13',['PZ_WARNING_TEST',['../_pz_assert_8h.html#a34664d3f11c6768dd6d03b77907a3576',1,'PzAssert.h']]],
-  ['pz_5fwarning_5ftest_5fonlyonce_14',['PZ_WARNING_TEST_ONLYONCE',['../_pz_assert_8h.html#a538c6cad0c6763f1aabfe13b63333785',1,'PzAssert.h']]]
+  ['pz_5fdebugbreak_12',['PZ_DEBUGBREAK',['../_pz_assert_8h.html#aef8128123194486e86b6e484fd95f665',1,'PzAssert.h']]],
+  ['pz_5ferror_5ftest_13',['PZ_ERROR_TEST',['../_pz_assert_8h.html#ab209cb87b907dcc2cc6d7926315a184f',1,'PzAssert.h']]],
+  ['pz_5fwarning_5ftest_14',['PZ_WARNING_TEST',['../_pz_assert_8h.html#a34664d3f11c6768dd6d03b77907a3576',1,'PzAssert.h']]],
+  ['pz_5fwarning_5ftest_5fonlyonce_15',['PZ_WARNING_TEST_ONLYONCE',['../_pz_assert_8h.html#a538c6cad0c6763f1aabfe13b63333785',1,'PzAssert.h']]]
 ];

@@ -34,6 +34,10 @@ var searchData=
   ['10_203_20intersection_20shader_31',['10.3 Intersection shader',['../arnold.html#autotoc_md55',1,'']]],
   ['10_204_20filter_32',['10.4 Filter',['../arnold.html#autotoc_md56',1,'']]],
   ['10_205_20driver_33',['10.5 Driver',['../arnold.html#autotoc_md57',1,'']]],
-  ['10_2dimplementation_2darnold_2emd_34',['10-implementation-arnold.md',['../10-implementation-arnold_8md.html',1,'']]],
-  ['11_2dsupport_2emd_35',['11-support.md',['../11-support_8md.html',1,'']]]
+  ['10_206_20operator_34',['10.6 Operator',['../arnold.html#autotoc_md58',1,'']]],
+  ['10_207_20shader_20operator_35',['10.7 Shader Operator',['../arnold.html#autotoc_md59',1,'']]],
+  ['10_208_20geometry_20procedural_36',['10.8 Geometry Procedural',['../arnold.html#autotoc_md60',1,'']]],
+  ['10_209_20loader_37',['10.9 Loader',['../arnold.html#autotoc_md61',1,'']]],
+  ['10_2dimplementation_2darnold_2emd_38',['10-implementation-arnold.md',['../10-implementation-arnold_8md.html',1,'']]],
+  ['11_2dsupport_2emd_39',['11-support.md',['../11-support_8md.html',1,'']]]
 ];

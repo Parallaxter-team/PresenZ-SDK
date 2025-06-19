@@ -1,6 +1,6 @@
 var _pz_define_8h =
 [
-    [ "Exception", "class_presen_z_1_1_util_1_1v4__0_1_1_exception.html", "class_presen_z_1_1_util_1_1v4__0_1_1_exception" ],
+    [ "Exception", "class_presen_z_1_1_util_1_1v4__1_1_1_exception.html", "class_presen_z_1_1_util_1_1v4__1_1_1_exception" ],
     [ "PRESENZ_THROW", "_pz_define_8h.html#a752964983dfdf0fb3b2d54db2f7ba22b", null ],
     [ "PRESENZ_VERSION_NS", "_pz_define_8h.html#a79abc9b29ae2c1df12ad7e820d9e2c5a", null ],
     [ "RenderingEngineId", "_pz_define_8h.html#aa2a3801b9d453f2cda8a267c162791e7", [

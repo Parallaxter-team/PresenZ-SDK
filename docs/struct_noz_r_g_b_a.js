@@ -4,6 +4,7 @@ var struct_noz_r_g_b_a =
     [ "NozRGBA", "group___n_o_z___r_g_b_a.html#ga560b90c3364e5405f1260f2611b4e7a2", null ],
     [ "NozRGBA", "group___n_o_z___r_g_b_a.html#gad792bcf8585e98727ea8bea8b39f9550", null ],
     [ "NozRGBA", "group___n_o_z___r_g_b_a.html#ga738f7b90b7a5ffa37b95005da34473e2", null ],
+    [ "isBlack", "group___n_o_z___r_g_b_a.html#gaeda3004b508bd4e24882b36206487a4b", null ],
     [ "operator!=", "group___n_o_z___r_g_b_a.html#ga4c0dff74cebadde18a5ea380a5a99c7d", null ],
     [ "operator*", "group___n_o_z___r_g_b_a.html#gaac02ebcb7201101466b50416e20636cb", null ],
     [ "operator*", "group___n_o_z___r_g_b_a.html#gaff2a34ec2fb7de30e45ee66d6f709def", null ],

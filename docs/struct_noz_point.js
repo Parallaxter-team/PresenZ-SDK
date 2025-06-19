@@ -22,6 +22,7 @@ var struct_noz_point =
     [ "operator/", "group___n_o_z__vector.html#ga7a06f413fd73d95af58b5d570a4c6f72", null ],
     [ "operator/=", "group___n_o_z__vector.html#gaa1c9ac8fd8a0045e9296e3d5748ac72c", null ],
     [ "operator/=", "group___n_o_z__vector.html#gaaae14981ec1bde71e822c5597e696dde", null ],
+    [ "operator=", "group___n_o_z__vector.html#gae0c347c18c45dd2738cac0cc5fb97bbd", null ],
     [ "operator=", "group___n_o_z__vector.html#ga352275a613839fd78afa572dbece4ef9", null ],
     [ "operator==", "group___n_o_z__vector.html#ga832162467f4ec39fed830ed42cf78e12", null ],
     [ "operator[]", "group___n_o_z__vector.html#ga89b833d4c5b862a4217ec9ab24086d18", null ],

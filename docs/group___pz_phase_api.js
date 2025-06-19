@@ -1,11 +1,11 @@
 var group___pz_phase_api =
 [
-    [ "PzResolutionParam", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html", [
-      [ "PzResolutionParam", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html#a4127f4026cdcb2500eef2b049f4a7af3", null ],
-      [ "blockCount", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html#a0f20dd08f38b353a8462dbdb5c64f48c", null ],
-      [ "resolutionX", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html#a24eba574aff4330b5b23cde062ceeaf4", null ],
-      [ "resolutionY", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html#a371cd97690481b2d2627ba015882ca60", null ],
-      [ "valid", "struct_presen_z_1_1_phase_1_1v4__0_1_1_pz_resolution_param.html#a28e3c179a86f337095088b3ca02a2b2a", null ]
+    [ "PzResolutionParam", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html", [
+      [ "PzResolutionParam", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html#a4127f4026cdcb2500eef2b049f4a7af3", null ],
+      [ "blockCount", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html#a0f20dd08f38b353a8462dbdb5c64f48c", null ],
+      [ "resolutionX", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html#a24eba574aff4330b5b23cde062ceeaf4", null ],
+      [ "resolutionY", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html#a371cd97690481b2d2627ba015882ca60", null ],
+      [ "valid", "struct_presen_z_1_1_phase_1_1v4__1_1_1_pz_resolution_param.html#a28e3c179a86f337095088b3ca02a2b2a", null ]
     ] ],
     [ "TerminatePhaseOptions", "group___pz_phase_api.html#gab309d51e14d4933eb0650d09120e07bf", [
       [ "SKIP_DISK_IO", "group___pz_phase_api.html#ggab309d51e14d4933eb0650d09120e07bfa4c992c255628c707cac2609ca38136fa", null ],
@@ -48,6 +48,7 @@ var group___pz_phase_api =
     [ "PzSetFroxtrumRayOrigin", "group___pz_phase_api.html#ga83c589abef5f556fb7eb2aa8259b6d12", null ],
     [ "PzSetFroxtrumResolution", "group___pz_phase_api.html#ga9fa5ec0665e69948b3124b0a28c88231", null ],
     [ "PzSetIdealPointSizeTarget", "group___pz_phase_api.html#gaa99ece6cbf6d1f8a07966bb2e17cbcb5", null ],
+    [ "PzSetLegacySampleMerger", "group___pz_phase_api.html#gad4d2a2b44facaa91590709a8f5f219a9", null ],
     [ "PzSetMaxDistance", "group___pz_phase_api.html#ga1587a4c595787fe3c30dd703566b0761", null ],
     [ "PzSetMotionVector", "group___pz_phase_api.html#gab97cf9e993c581aca0a1eb7401faf784", null ],
     [ "PzSetOutFilePath", "group___pz_phase_api.html#ga7759b42bda5736f78e2fecd80601d16e", null ],
@@ -64,6 +65,7 @@ var group___pz_phase_api =
     [ "PzSetSpecularPointOffset", "group___pz_phase_api.html#ga1aca5cb52d6cc925c72a658a8cae0161", null ],
     [ "PzSetThreadNumber", "group___pz_phase_api.html#gaf893250a30d9bea6182a59fbe66dbe9c", null ],
     [ "PzSetTolerance", "group___pz_phase_api.html#ga856382a939b119ab01f7970c21cf8d62", null ],
+    [ "PzSetVolumeDepth", "group___pz_phase_api.html#gadb463d0048e422dc0b613361de76d887", null ],
     [ "PzSetWindowShapesFile", "group___pz_phase_api.html#ga79970a419cce7b5c709765413c5d8fb2", null ],
     [ "PzSetWorldToCamMatrix", "group___pz_phase_api.html#ga277843f6a9ce3d62bf9d845799da7555", null ],
     [ "PzSetZovOffset", "group___pz_phase_api.html#gaae62eec6ec456bd4c638f1c0b4bf470f", null ],

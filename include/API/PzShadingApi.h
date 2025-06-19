@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 // All rights reserved.
 
 /// \file PzShadingApi.h
@@ -142,14 +142,40 @@ namespace PRESENZ_VERSION_NS {
     /// @param[in] pixelY Y coordinate of the pixel.
     /// @param[in] hitDistance Distance between the ray origin (the camera) and the current shading point.
     /// @param[in] isChaotic Set to true if the current shaded object is tagged as "Chaotic"
+    /// @param[in] isVolumetric Set to true if the current shaded object is a volumetric.
     /// @return True or false depending if the object need to be evaluated. If not, the computed sample should be RGBA(0,0,0,0).
-    presenz_plugin_sdk_EXPORT bool PzIsValidEvaluation(const int &pixelX, const int &pixelY, const double &hitDistance, bool isChaotic = false);
+    presenz_plugin_sdk_EXPORT bool PzIsValidEvaluation(const int &pixelX, const int &pixelY, const double &hitDistance, bool isChaotic = false, bool isVolumetric = false);
 
+    /// \brief Get the X/Y position in [0,1[ inside the rendered pixel.
+    /// @param[in] pixelX X coordinate of the pixel (rendered, like PzIsValidEvaluation).
+    /// @param[in] pixelY Y coordinate of the pixel (rendered, like PzIsValidEvaluation).
+    /// @param[in] pixelSampleIndex The sample index.
+    /// @return a NozVector2 containing the position inside the camera pixel position.
+    presenz_plugin_sdk_EXPORT NozVector2 PzGetXYInPixelPosition(const int& pixelX, const int& pixelY, const size_t &pixelSampleIndex);
+
+
+    /// \brief Get the position in the cubemap of the current rendered pixel.
+    /// @param[in] pixelX X coordinate of the pixel (rendered, like PzIsValidEvaluation).
+    /// @param[in] pixelY Y coordinate of the pixel (rendered, like PzIsValidEvaluation).
+    /// @param[out] outPixelX The X pixel position in the cubemap for this pixel.
+    /// @param[out] outPixelY The Y pixel position in the cubemap for this pixel.
+    /// @return a boolean if outPixelX/outPixelY is valid.
+    presenz_plugin_sdk_EXPORT bool PzGetPixelCoordinates(const int& pixelX, const int& pixelY, int& outPixelX, int& outPixelY);
 
     /// \brief Query PresenZ about the current rendering resolution. (in pixels)
     /// @param[out] resX Horizontal resolution in pixels.
     /// @param[out] resY Vertical resolution in pixels.
     presenz_plugin_sdk_EXPORT void PzGetRenderingResolution(double &resX, double &resY);
+
+
+    /// \brief Query PresenZ about the distance between a given point and the original scanning location.
+    /// @param[in] pixelX X coordinate of the pixel.
+    /// @param[in] pixelY Y coordinate of the pixel.
+    /// @param[in] pos world position of the 3d coordinate.
+    /// @param[out] distance the distance between a pos and the original scanning location.
+    /// @return True or false depending if the distance has been be computed correctly.
+    presenz_plugin_sdk_EXPORT bool PzDistanceFromCamera(const int& pixelX, const int& pixelY, const NozPoint& pos, float& distance);
+
 /// \}
 }
 using namespace PRESENZ_VERSION_NS;

@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 // All rights reserved.
 
 /// \file PzPhaseApi.h
@@ -96,6 +96,10 @@ namespace PresenZ {
             /// @param[in] depth Set the depth of the froxtrums
             presenz_plugin_sdk_EXPORT void PzSetFroxtrumDepth(const int& depth = 6);
 
+            /// @brief Set the depth density of volumetrics. By default, it's set to 9. Lower will increase volumetrics density, higher will lower it.
+            /// @param[in] depth Set the depth of the volumetrics
+            presenz_plugin_sdk_EXPORT void PzSetVolumeDepth(const int& depth = 9);
+
             /// @brief Set the resolution of frustrum. By default, it's set to 8x8 square.
             /// @param[in] resolution resolution of the foxtrum
             presenz_plugin_sdk_EXPORT void PzSetFroxtrumResolution(const int& resolution = 8);
@@ -163,6 +167,10 @@ namespace PresenZ {
             /// @brief Declare if we are using an external ray counter, using PzSetSamplesCount
             /// @param[in] hasExternalCounter true if we are using a external counter.
             presenz_plugin_sdk_EXPORT void PzSetExternalCounter(const bool& hasExternalCounter = false);
+
+            /// @brief Declare if we are using wants to the legacy sample merger.
+            /// @param[in] useLegacy true if we are using the legacy code.
+            presenz_plugin_sdk_EXPORT void PzSetLegacySampleMerger(const bool& useLegacy = false);
 
             /// @brief Set the width and height for each render bucket.
             /// @param[in] width The width of the bucket.

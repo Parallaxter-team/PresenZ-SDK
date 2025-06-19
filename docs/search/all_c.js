@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['a_0',['a',['../struct_presen_z_1_1_render_sample_1_1v4__0_1_1vec4.html#a4aec1a5be9d9a4a394a2e49e9744286e',1,'PresenZ::RenderSample::v4_0::vec4::a'],['../group___n_o_z___r_g_b_a.html#ga4aec1a5be9d9a4a394a2e49e9744286e',1,'NozLAB::a'],['../group___n_o_z___r_g_b_a.html#ga4aec1a5be9d9a4a394a2e49e9744286e',1,'NozRGBA::a']]],
+  ['a_0',['a',['../struct_presen_z_1_1_render_sample_1_1v4__1_1_1vec4.html#a4aec1a5be9d9a4a394a2e49e9744286e',1,'PresenZ::RenderSample::v4_1::vec4::a'],['../group___n_o_z___r_g_b_a.html#ga4aec1a5be9d9a4a394a2e49e9744286e',1,'NozLAB::a'],['../group___n_o_z___r_g_b_a.html#ga4aec1a5be9d9a4a394a2e49e9744286e',1,'NozRGBA::a']]],
   ['a_20few_20renders_20in_20a_20row_1',['2.1.2 Ability to start a few renders in a row',['../requirements.html#autotoc_md5',1,'']]],
   ['a_20hit_20test_20callback_20function_2',['4.1.3 Creating a hit test callback function',['../phases.html#autotoc_md26',1,'']]],
   ['a_20line_20of_20sight_20from_20point_20a_20to_20point_20b_3',['2.1.3 Ability to check if there’s a line of sight from point A to point B',['../requirements.html#autotoc_md6',1,'']]],
@@ -23,8 +23,8 @@ var searchData=
   ['animations_20',['8.2 Animations',['../hair.html#autotoc_md41',1,'']]],
   ['aov_20format_21',['AOV format',['../group___render_sample.html#AOV',1,'']]],
   ['aov_20shader_22',['10.2 AOV shader',['../arnold.html#autotoc_md54',1,'']]],
-  ['aovdata_23',['AOVData',['../union_presen_z_1_1_render_sample_1_1v4__0_1_1_a_o_v_data.html',1,'AOVData'],['../union_presen_z_1_1_render_sample_1_1v4__0_1_1_a_o_v_data.html#a03446a70e84e4ac3a03edd030c6cafd6',1,'PresenZ::RenderSample::v4_0::AOVData::AOVData()']]],
-  ['aovs_24',['AOVs',['../init_termination.html#autotoc_md18',1,'3.3.1 Setting up AOVs'],['../struct_presen_z_1_1_render_sample_1_1v4__0_1_1_pz_render_sample.html#a7716257f9fc5fa613d6548b57027bf82',1,'PresenZ::RenderSample::v4_0::PzRenderSample::AOVs']]],
+  ['aovdata_23',['AOVData',['../union_presen_z_1_1_render_sample_1_1v4__1_1_1_a_o_v_data.html',1,'AOVData'],['../union_presen_z_1_1_render_sample_1_1v4__1_1_1_a_o_v_data.html#a03446a70e84e4ac3a03edd030c6cafd6',1,'PresenZ::RenderSample::v4_1::AOVData::AOVData()']]],
+  ['aovs_24',['AOVs',['../init_termination.html#autotoc_md18',1,'3.3.1 Setting up AOVs'],['../struct_presen_z_1_1_render_sample_1_1v4__1_1_1_pz_render_sample.html#a7716257f9fc5fa613d6548b57027bf82',1,'PresenZ::RenderSample::v4_1::PzRenderSample::AOVs']]],
   ['aovs_20to_20presenz_25',['4.2.5 Forwarding AOVs to PresenZ',['../phases.html#autotoc_md33',1,'']]],
   ['aovtype_26',['AOVType',['../namespace_presen_z_1_1_phase_1_1_p_r_e_s_e_n_z___v_e_r_s_i_o_n___n_s.html#add16db84a471b163119fa85bfa9df0fd',1,'PresenZ::Phase::PRESENZ_VERSION_NS']]],
   ['api_27',['API',['../group___n_o_z___r_g_b_a.html',1,'Color API'],['../group___n_o_z__vector.html',1,'Vector API']]],
@@ -36,9 +36,9 @@ var searchData=
   ['applogger_5fprogressdone_33',['APPLOGGER_PROGRESSDONE',['../group___pz_app_logger.html#ga76ee7780bdea0fa4b3bc44d15cfaf3f8',1,'PzAppLogger.h']]],
   ['applogger_5fsetprogresstaskname_34',['APPLOGGER_SETPROGRESSTASKNAME',['../group___pz_app_logger.html#ga7eedd32b47a9b68dcec62aa1a55edd64',1,'PzAppLogger.h']]],
   ['applogger_5ftrace_35',['APPLOGGER_TRACE',['../group___pz_app_logger.html#ga16ab18aa2ddd4eabafaf6c84085fef5a',1,'PzAppLogger.h']]],
-  ['apploggercallback_36',['AppLoggerCallback',['../group___pz_app_logger.html#gab5ebeff7d2edd8864173e0259cedef45',1,'PresenZ::Logger::v4_0']]],
-  ['arnold_37',['ARNOLD',['../namespace_presen_z_1_1_util_1_1v4__0.html#aa2a3801b9d453f2cda8a267c162791e7a1ef14ceaafbd256c6f20a84a0c272445',1,'PresenZ::Util::v4_0']]],
+  ['apploggercallback_36',['AppLoggerCallback',['../group___pz_app_logger.html#gab5ebeff7d2edd8864173e0259cedef45',1,'PresenZ::Logger::v4_1']]],
+  ['arnold_37',['ARNOLD',['../namespace_presen_z_1_1_util_1_1v4__1.html#aa2a3801b9d453f2cda8a267c162791e7a1ef14ceaafbd256c6f20a84a0c272445',1,'PresenZ::Util::v4_1']]],
   ['arnold_38',['Implementation in Arnold',['../arnold.html',1,'']]],
-  ['asset_39',['asset',['../namespace_presen_z_1_1_cryptomatte_1_1v4__0.html#a7a7eaab162f0d2b949603d600f496164a3b01a9554831a27f47d6e6c53c7ad49e',1,'PresenZ::Cryptomatte::v4_0']]],
+  ['asset_39',['asset',['../namespace_presen_z_1_1_cryptomatte_1_1v4__1.html#a7a7eaab162f0d2b949603d600f496164a3b01a9554831a27f47d6e6c53c7ad49e',1,'PresenZ::Cryptomatte::v4_1']]],
   ['at_20specific_20location_40',['2.2.4 Ability to extract velocity at specific location',['../requirements.html#autotoc_md14',1,'']]]
 ];

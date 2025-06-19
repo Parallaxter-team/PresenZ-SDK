@@ -1,5 +1,6 @@
 var struct_noz_point2 =
 [
+    [ "isClose", "group___n_o_z__vector.html#gaf9c901278ff0381bcf60fb37fe5f4fe8", null ],
     [ "operator!=", "group___n_o_z__vector.html#gaa066e8bd3fb5671addd53620000c6a05", null ],
     [ "operator*", "group___n_o_z__vector.html#gab9f2fe574adb3caad469cb696b547774", null ],
     [ "operator*", "group___n_o_z__vector.html#gacc31d2bdb6ea300bfaea97256aea47ec", null ],
@@ -18,6 +19,7 @@ var struct_noz_point2 =
     [ "operator/", "group___n_o_z__vector.html#ga0ea95c323fea74c6a92e2b1a837e08b6", null ],
     [ "operator/=", "group___n_o_z__vector.html#gad4702d383a63dda11ffeee76158a5429", null ],
     [ "operator/=", "group___n_o_z__vector.html#gab0cf3342827e1177f6980d1c797e1189", null ],
+    [ "operator<", "group___n_o_z__vector.html#gaca7281f1e4b617f879982fffe6d5fb1a", null ],
     [ "operator=", "group___n_o_z__vector.html#gae07235e059524ed9383ce016b127930e", null ],
     [ "operator==", "group___n_o_z__vector.html#ga157f67e310f514c61e6b7d7bbf9ae261", null ],
     [ "operator[]", "group___n_o_z__vector.html#ga89b833d4c5b862a4217ec9ab24086d18", null ],

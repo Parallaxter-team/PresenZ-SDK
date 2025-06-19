@@ -1,5 +1,5 @@
 //////////////////////////////////////////////////////////////////////////
-// (c) Copyright 2019 - Parallaxter SPRL/Starbreeze AB 
+// Copyright (C) V-Nova 2025. All rights reserved.
 
 /// \file PzAssert.h
 /// \brief Several helper macros for validating and debugging using PresenZ logging system
@@ -19,16 +19,18 @@
 #include "PzAppLogger.h"
 
 /// @brief Trigger an Interruption 3/Hardware debug (windows only, will invoke abort() on other systems).
-#ifdef _DEBUG
+
 #ifdef WIN32
 #define PZ_BREAK() do { __debugbreak();  } while(0)
 #else
-#include <stdlib.h>
-#define PZ_BREAK() do { abort(); } while(0)
+#include <signal.h>
+#define PZ_BREAK() raise(SIGTRAP) // GCC/Clang
 #endif
-#else
-#define PZ_BREAK() do { throw std::exception(); } while(0)
-#endif
+
+#define PZ_DEBUGBREAK(...) \
+    if ((__VA_ARGS__)) { \
+        PZ_BREAK(); \
+    }
 
 /// @brief This one is used for invariants: condition is supposed to always be true
 #define PZ_ASSERT(condition, message,...) { if(!(condition)) { PZ_ERROR(message, ##__VA_ARGS__); PZ_BREAK(); } } 

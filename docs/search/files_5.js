@@ -10,7 +10,8 @@ var searchData=
   ['pzdefine_2eh_7',['PzDefine.h',['../_pz_define_8h.html',1,'']]],
   ['pzdetectsampleapi_2eh_8',['PzDetectSampleApi.h',['../_pz_detect_sample_api_8h.html',1,'']]],
   ['pzdetectsamplempapi_2eh_9',['PzDetectSampleMPApi.h',['../_pz_detect_sample_m_p_api_8h.html',1,'']]],
-  ['pzphaseapi_2eh_10',['PzPhaseApi.h',['../_pz_phase_api_8h.html',1,'']]],
-  ['pzrendersampleapi_2eh_11',['PzRenderSampleApi.h',['../_pz_render_sample_api_8h.html',1,'']]],
-  ['pzshadingapi_2eh_12',['PzShadingApi.h',['../_pz_shading_api_8h.html',1,'']]]
+  ['pzlicensingapi_2eh_10',['PzLicensingApi.h',['../_pz_licensing_api_8h.html',1,'']]],
+  ['pzphaseapi_2eh_11',['PzPhaseApi.h',['../_pz_phase_api_8h.html',1,'']]],
+  ['pzrendersampleapi_2eh_12',['PzRenderSampleApi.h',['../_pz_render_sample_api_8h.html',1,'']]],
+  ['pzshadingapi_2eh_13',['PzShadingApi.h',['../_pz_shading_api_8h.html',1,'']]]
 ];

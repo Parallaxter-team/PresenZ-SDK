@@ -37,7 +37,19 @@ inline NozMatrix getNozM4Identity() {
     return identityMat;
 }
 
+inline bool isNozM4Identity(const NozMatrix& m, float eps = 1e-6f) {
+    NozMatrix identityMat;
+    NozM4Idendity(identityMat);
 
+    for (int i = 0; i < 3; ++i) {
+        for (int k = 0; k < 3; ++k)
+            if (fabsf(identityMat[i][k] - m[i][k]) > eps)
+                return false;
+    }
+
+
+    return true;
+}
 
 
 inline void nozMatrix_set(NozMatrix &mout,

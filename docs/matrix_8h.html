@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=11"/>
 <meta name="generator" content="Doxygen 1.10.0"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>PresenZ SDK: PresenZ4.0.6_Windows/include/common/matrix.h File Reference</title>
+<title>PresenZ SDK: PresenZ4.1.0_Windows/include/common/matrix.h File Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -27,7 +27,7 @@
  <tbody>
  <tr id="projectrow">
   <td id="projectalign">
-   <div id="projectname">PresenZ SDK<span id="projectnumber">&#160;4.0.6</span>
+   <div id="projectname">PresenZ SDK<span id="projectnumber">&#160;4.1.0</span>
    </div>
   </td>
  </tr>
@@ -116,6 +116,8 @@ Functions</h2></td></tr>
 <tr class="separator:a8608237d2d11154425dec8c2c5cafe55"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5ac8a8e0db5b1184d459544150af88ac" id="r_a5ac8a8e0db5b1184d459544150af88ac"><td class="memItemLeft" align="right" valign="top"><a class="el" href="#a15eb5c4da255c65c60623dc95ca45bc1">NozMatrix</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5ac8a8e0db5b1184d459544150af88ac">getNozM4Identity</a> ()</td></tr>
 <tr class="separator:a5ac8a8e0db5b1184d459544150af88ac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a50a9b90056a2d7f5e334189e001eed6e" id="r_a50a9b90056a2d7f5e334189e001eed6e"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a50a9b90056a2d7f5e334189e001eed6e">isNozM4Identity</a> (const <a class="el" href="#a15eb5c4da255c65c60623dc95ca45bc1">NozMatrix</a> &amp;m, float eps=1e-6f)</td></tr>
+<tr class="separator:a50a9b90056a2d7f5e334189e001eed6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5b040b12b24902fc623874166eadacb2" id="r_a5b040b12b24902fc623874166eadacb2"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a5b040b12b24902fc623874166eadacb2">nozMatrix_set</a> (<a class="el" href="#a15eb5c4da255c65c60623dc95ca45bc1">NozMatrix</a> &amp;mout, float r00, float r01, float r02, float r03, float r10, float r11, float r12, float r13, float r20, float r21, float r22, float r23, float r30, float r31, float r32, float r33)</td></tr>
 <tr class="separator:a5b040b12b24902fc623874166eadacb2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8ddec78c4ace344a33646e72510d9b70" id="r_a8ddec78c4ace344a33646e72510d9b70"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="#a8ddec78c4ace344a33646e72510d9b70">NozM4PointByMatrixMult</a> (<a class="el" href="struct_noz_point.html">NozPoint</a> &amp;pout, const <a class="el" href="#a15eb5c4da255c65c60623dc95ca45bc1">NozMatrix</a> &amp;mat, const <a class="el" href="struct_noz_point.html">NozPoint</a> pin)</td></tr>
@@ -244,6 +246,35 @@ Functions</h2></td></tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">const <a class="el" href="group___n_o_z__vector.html#ga347d85f3e636cf273a47949aa0613a8f">NozVector</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>vin</em></span>&#160;)</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a50a9b90056a2d7f5e334189e001eed6e" name="a50a9b90056a2d7f5e334189e001eed6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a50a9b90056a2d7f5e334189e001eed6e">&#9670;&#160;</a></span>isNozM4Identity()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool isNozM4Identity </td>
+          <td>(</td>
+          <td class="paramtype">const <a class="el" href="#a15eb5c4da255c65c60623dc95ca45bc1">NozMatrix</a> &amp;</td>          <td class="paramname"><span class="paramname"><em>m</em>, </span></td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">float</td>          <td class="paramname"><span class="paramname"><em>eps</em><span class="paramdefsep"> = </span><span class="paramdefval">1e-6f</span></span>&#160;)</td>
         </tr>
       </table>
   </td>
@@ -711,7 +742,7 @@ Functions</h2></td></tr>
 <!-- start footer part -->
 <div id="nav-path" class="navpath"><!-- id is needed for treeview function! -->
   <ul>
-    <li class="navelem"><a class="el" href="dir_a2bcd2fdd2c5a3c01789c538633b718e.html">PresenZ4.0.6_Windows</a></li><li class="navelem"><a class="el" href="dir_001f9f82d72210972e430b92fe324fd3.html">include</a></li><li class="navelem"><a class="el" href="dir_020b7816761b6d1fc6366cacee6dac51.html">common</a></li><li class="navelem"><a class="el" href="matrix_8h.html">matrix.h</a></li>
+    <li class="navelem"><a class="el" href="dir_a88012d84d33beb4933417172d4cb153.html">PresenZ4.1.0_Windows</a></li><li class="navelem"><a class="el" href="dir_424e1836d9359f565fb0040b024e8e2c.html">include</a></li><li class="navelem"><a class="el" href="dir_fbe2189e5024e02d46b310cffc26a0ba.html">common</a></li><li class="navelem"><a class="el" href="matrix_8h.html">matrix.h</a></li>
     <li class="footer">Generated by <a href="https://www.doxygen.org/index.html"><img class="footer" src="doxygen.svg" width="104" height="31" alt="doxygen"/></a> 1.10.0 </li>
   </ul>
 </div>

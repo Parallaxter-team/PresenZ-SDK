@@ -8,6 +8,8 @@
 #include "types.h"
 
 #include <math.h>
+#include <iostream>
+
 
 /** \defgroup NOZ_vector Vector API
 * \brief
@@ -195,6 +197,9 @@ struct NozPoint
     {
         return !(*this == p);
     }
+
+    NozPoint& operator=(const NozPoint& p) = default;
+
 /// @brief copy operator
     NozPoint& operator=(float f)
     {
@@ -248,6 +253,11 @@ struct NozPoint2
     float x;
 /// y	
 	float y;
+
+    bool isClose(const NozPoint2& other, float epsilon = 1e-5f) const {
+        return (std::fabs(x - other.x) < epsilon) && (std::fabs(y - other.y) < epsilon);
+    }
+
 /// add operator
     NozPoint2 operator+(const NozPoint2& p) const
     {
@@ -404,6 +414,12 @@ struct NozPoint2
     const float& operator[](unsigned int i) const
     {
         return *(&x + i);  // no bounds checking!
+    }
+
+    bool operator<(const NozPoint2& other) const {
+        if (std::fabs(x - other.x) >= NOZ_EPSILON)
+            return x < other.x;
+        return y < other.y;
     }
 
     friend NozPoint2 operator*(float f, const NozPoint2& p);
@@ -679,6 +695,18 @@ inline NozVector NozVecfaceforward(const NozVector& N, const NozVector& I) {
         return -N;
 }
 
+// Overload operator<< for NozVector
+inline std::ostream& operator<<(std::ostream& os, const NozVector& vec) {
+    os << "NozVector(" << vec.x << ", " << vec.y << ", " << vec.z << ")";
+    return os;
+}
+
+// Overload operator<< for NozVector2
+inline std::ostream& operator<<(std::ostream& os, const NozVector2& vec2) {
+    os << "NozVector(" << vec2.x << ", " << vec2.y << ")";
+    return os;
+}
+
 /*\}*/
 
 
@@ -686,6 +714,7 @@ inline NozVector NozVecfaceforward(const NozVector& N, const NozVector& I) {
 #define NOZ_V3_ZERO  NozVector(0.0, 0.0, 0.0);
 /// @brief 3D vector {1.0,1.0,1.0}
 #define NOZ_V3_ONE  NozVector(1.0, 1.0, 1.0);
+
 
 
 /*\}*/
