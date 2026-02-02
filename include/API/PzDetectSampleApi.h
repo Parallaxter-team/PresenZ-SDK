@@ -8,7 +8,7 @@
 #ifndef _PzDetectSampleAPI_h_
 #define _PzDetectSampleAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 #include "PzConstants.h"
 #include "common/vector.h"
 #include "common/color.h"
@@ -44,24 +44,22 @@ namespace PRESENZ_VERSION_NS {
     ///\brief RayTestResult is a simplistic structure that holds the 3D hitpoint of the ray, the normal at that point, and the total distance of the ray.
     struct RayTestResult
     {
+        inline RayTestResult() : hit(0.0f), normal(0.0f), d(0.0) {}
+
 		/// 3D hitpoint.
         NozPoint hit;		
 		/// normal at the hitpoint.
         NozVector normal;	
 		/// distance of ray.
         double d;	
-        /// is the point Chaotic ?
-        bool isChaotic;
     };
 
     struct SaveDataStructure
     {
-        SaveDataStructure() {}
-        
+        inline SaveDataStructure() : camera(0), isEstimated(false), isHair(false), isChaotic(false), isVolumetric(false), expSize(0), transpType(0), z(0.0f), minZ(0.0f), maxZ(NOZ_INFINITE), normal(0.0f), bestCam(0), pixelX(-1), pixelY(-1) {}
         uint8_t camera;
         bool isEstimated;
         bool isHair;
-        bool isDraft;
         bool isChaotic;
         bool isVolumetric;
         uint8_t expSize;
@@ -73,7 +71,6 @@ namespace PRESENZ_VERSION_NS {
         uint8_t bestCam; // regardless of occlusion and priorities.
         int pixelX;
         int pixelY;
-
     };
 
     /// \brief Store the previous intersection along a camera ray
@@ -87,8 +84,6 @@ namespace PRESENZ_VERSION_NS {
 
 	///\brief Callback for ray test intersection.
     typedef bool(*RayTestCallback)(const NozVector& origin, const NozVector& dir, const double dist, RayTestResult& outP, void* userData);
-	///\brief Callback for query of user data.
-    typedef uint64_t(*QueryFlagsCallback)(uint64_t flags, void* userData);
     ///\brief Callback for saving data.
     typedef bool(*SaveDataCallBack)(const SaveDataStructure& info, void* userData);
     ///\brief Callback for getting or saving the previous hit data
@@ -101,14 +96,12 @@ namespace PRESENZ_VERSION_NS {
         void *userdata = nullptr;
 		/// Callback for raytracing intersection test
         RayTestCallback probe = nullptr;
-		/// Callback for querying render flags
-        QueryFlagsCallback query = nullptr;
         /// Callback for saving the data if the renderer is responsible for it
         SaveDataCallBack saveData = nullptr;
         /// previous hit in case of glass surfaces
         PreviousHitDataCallBack previousHit = nullptr;
-        RayTestInterface(void* userdata, RayTestCallback probe, QueryFlagsCallback query, SaveDataCallBack saveData, PreviousHitDataCallBack previousHit)
-            : userdata(userdata), probe(probe), query(query), saveData(saveData), previousHit(previousHit) {}
+        RayTestInterface(void* userdata, RayTestCallback probe, SaveDataCallBack saveData, PreviousHitDataCallBack previousHit)
+            : userdata(userdata), probe(probe), saveData(saveData), previousHit(previousHit) { }
     };
 
     //////////////////////////////////////////////////////////////////////////
@@ -138,18 +131,27 @@ namespace PRESENZ_VERSION_NS {
 
 	/// \brief During the detection phase, ray intersections need to be notified to PresenZ through PzProcessDetectSample(). This function needs to be called for each
     /// sample in the detection phase.
+    /// This version of the call should be used if you are using the PresenZ bucket system.
     /// @param[in] intfPtr A pointer to the ray test interface structure containing the information of the probe. Can be set to null for reflection detection.
     /// @param[in] sample The PzDetectSample 
-    /// @param[in] threadIndex The index of the thread processing the sample
+    /// @param[in] threadIndex The index of the thread processing the sample (== same thread id as the bucket rendering this pixel)
     /// @return RGBA values of the sample
     presenz_plugin_sdk_EXPORT NozRGBA PzProcessDetectSample(RayTestInterface *intfPtr, const PzDetectSample& sample, const size_t &threadIndex);
+
+    /// \brief During the detection phase, ray intersections need to be notified to PresenZ through PzProcessDetectSample(). This function needs to be called for each
+    /// sample in the detection phase.
+    /// This version of the call should be used if you don't use the PresenZ bucket system.
+    /// @param[in] intfPtr A pointer to the ray test interface structure containing the information of the probe. Can be set to null for reflection detection.
+    /// @param[in] sample The PzDetectSample 
+    /// @return RGBA values of the sample
+    presenz_plugin_sdk_EXPORT NozRGBA PzProcessDetectSample(RayTestInterface* intfPtr, const PzDetectSample& sample);
     //////////////////////////////////////////////////////////////////////////
     
     //////////////////////////////////////////////////////////////////////////
     ///\brief PzDetectSample needs to know what is the sampleIndex. In some renderers, this information can't be 
     /// reliably obtained. If this is the case, PresenZ can guess the sample index from the ray origin. 
     /// @param[in] sample The PzDetectSample 
-    /// @param[in] rayOriginPos The ray origin, usually the camera position.
+    /// @param[in] rayOriginWorldPos The ray origin, usually the camera position.
     presenz_plugin_sdk_EXPORT void PzMatchSampleIndex(PzDetectSample& sample, const NozPoint& rayOriginWorldPos);
 
 

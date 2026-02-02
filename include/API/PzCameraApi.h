@@ -8,7 +8,7 @@
 #ifndef _PZCAMERAAPI_h_
 #define _PZCAMERAAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 #include "common/vector.h"
 
 namespace PresenZ {
@@ -62,16 +62,35 @@ namespace PRESENZ_VERSION_NS {
         bool isValid() const { return valid; };
     };
 
+    /// @brief If you are using a external counter (PzSetExternalCounter(true)), you are responsible to increase or set the sample counter for each camera ray at rendering phase using this function. 
+    /// @param[in] x Horizontal position in screen space of the pixel on the target image.
+    /// @param[in] y Vertical position in screen space of the pixel on the target image.
+    /// @param[in] count The current count from your counter.
+    /// @return true if the counter was properly incremented.
+    presenz_plugin_sdk_EXPORT bool PzSetSampleIndexCount(const int& pixelX, const int& pixelY, const int &count);
+
+    /// @brief If you are using a external counter (PzSetExternalCounter(true)), you are responsible to increase the sample counter for each camera ray at rendering phase using this function. 
+    /// @param[in] x Horizontal position in screen space of the pixel on the target image.
+    /// @param[in] y Vertical position in screen space of the pixel on the target image.
+    /// @return true if the counter was properly incremented.
+    presenz_plugin_sdk_EXPORT bool PzIncrementSampleIndexCount(const int& pixelX, const int& pixelY);
+
     /// @brief Return a ray for a given pixel X/Y coordinate  for the current PresenZ phase. 
     /// @param[in] x Horizontal position in screen space of the pixel on the target image.
     /// @param[in] y Vertical position in screen space of the pixel on the target image.
     /// @return All the ray information contained in a PzCameraRay structure
     presenz_plugin_sdk_EXPORT PzCameraRay PzGetCameraRay(const double &x, const double &y);
 
+    /// @brief Return a ray for a given pixel X/Y coordinate  for the current PresenZ phase. 
+    /// @param[in] pixelX Horizontal position in screen space of the pixel on the target image.
+    /// @param[in] pixelY Vertical position in screen space of the pixel on the target image.
+    /// @param[in] pixelSampleIndex The index of the current sample.
+    /// @return All the ray information contained in a PzCameraRay structure
+    presenz_plugin_sdk_EXPORT PzCameraRay PzGetCameraRay(const int& pixelX, const int& pixelY, const int& pixelSampleIndex);
 
     /// @brief Return a ray for a given pixel X/Y coordinate  for the current PresenZ phase. 
-    /// @param[in] x Horizontal position in screen space of the pixel on the target image.
-    /// @param[in] y Vertical position in screen space of the pixel on the target image.
+    /// @param[in] pixelX Horizontal position in screen space of the pixel on the target image.
+    /// @param[in] pixelY Vertical position in screen space of the pixel on the target image.
     /// @return All the ray information contained in a PzCameraRay structure
     presenz_plugin_sdk_EXPORT PzCameraRay PzGetCameraRay(const int &pixelX, const int &pixelY);
 
@@ -112,18 +131,31 @@ namespace PRESENZ_VERSION_NS {
     /// @brief Return a ray as if it was cast from the center of the camera. 
     /// @param[in] x Horizontal position in screen space of the pixel on the target image.
     /// @param[in] y Vertical position in screen space of the pixel on the target image.
+	/// @param[in] xres Horizontal resolution of the target image.
+    /// @param[in] yres Horizontal resolution of the target image.
     /// @return All the ray information contained in a PzCameraRay structure
     presenz_plugin_sdk_EXPORT  PzCameraRay PzGetCenterRay(const double &x, const double &y, const double &xres, double &yres);
 
-    /// @brief Given a screen position (X,Y), this will return a random seed.
-    /// @param[in] x Horizontal position in screen space of the pixel on the target image.
-    /// @param[in] y Vertical position in screen space of the pixel on the target image.
-    /// @return 64 bits random integer value
-    presenz_plugin_sdk_EXPORT  NozUInt64 PzGetSeed(const double &x, const double &y);
-
-
     /// @brief Given a direction (X,Y,Z), this will return the u,v screen coordinates of the cubeMap projection.
     presenz_plugin_sdk_EXPORT void PzGetUVFromRay(const NozVector& dir, double& uval, double& vval);
+
+
+    ///@brief Space for point & vector coordinates.
+    ///For the function that return a point or a vector, this will define witch space will be used.
+    enum Space
+    {
+        /// camera space.
+        CameraSpace = 1,
+        /// world space.
+        WorldSpace = 2
+    };
+
+    // @brief Given a direction (X,Y,Z), this will return the closest corresponding X,Y coordinates on the target image.
+    /// @param[in] dir The input direction.
+    /// @param[out] outX The output horizontal coordinate of the closest pixel on the target image.
+    /// @param[out] outY The output vertical coordinate of the closest pixel on the target image.
+    /// @param[in] space The space coordinate of dir. 1 = camera space, 2 = world space.
+    presenz_plugin_sdk_EXPORT bool PzGetClosestCamDirXY(const NozVector& dir, int& outX, int& outY, const Space& space = CameraSpace);
 
 /// \}	
 }

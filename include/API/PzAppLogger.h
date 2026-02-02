@@ -5,7 +5,7 @@
 #ifndef _logger_h_
 #define _logger_h_
 
-#include "export.h"
+#include "PzExport.h"
 
 #include "PzConstants.h"
 // needed for defining C-String variadic function
@@ -158,7 +158,7 @@ presenz_plugin_sdk_EXPORT void PzOutputLogString(const LogLevel &logLevel, const
 presenz_plugin_sdk_EXPORT  void PzProgressTaskName(const char * taskName);
 
 /// @brief switch to an horizontal progress bax or to a vertical percentage counter
-/// @param[in] type of progress
+/// @param[in] progressType type of progress
 presenz_plugin_sdk_EXPORT void PzSetProgressBarType(ProgressBarType progressType);
 
 /// @brief Reset the progression tracker (only for STD out)

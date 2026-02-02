@@ -1,7 +1,7 @@
 #ifndef _PZLICENSINGAPI_h_
 #define _PZLICENSINGAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 
 namespace PresenZ {
 namespace Licensing {

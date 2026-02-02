@@ -38,6 +38,22 @@ namespace PresenZ {
         }
     }
 
+    namespace Phase {
+        namespace PRESENZ_VERSION_NS {
+            /// @brief PixelFilter defines the filter that will be applied to the pixel sample.
+            enum PixelFilter
+            {
+                /// no filter, just return the sample as is
+                Box = 0,
+                // Gaussian filter, this will apply a gaussian filter on the sample
+                Gaussian = 1,
+                // Blackman-Harris filter, this will apply a Blackman-Harris filter on the sample
+                Blackman_Harris = 2
+
+            };
+        }
+    }
+
     namespace DetectSample {
         namespace PRESENZ_VERSION_NS {
 
@@ -86,7 +102,10 @@ namespace PresenZ {
                 /// Detection phase for reflections
                 Detect_Reflection = 2,
                 /// Detection phase for reflections
-                Render_Reflection = 3
+                Render_Reflection = 3,
+                /// Debug is for debug purpose only.
+                // This only initialize the bare minimum for testing.
+                Debug = 4
             };
 
             ///@brief Space for point & vector coordinates.
@@ -99,6 +118,24 @@ namespace PresenZ {
                 World = 2
             };
 
+            enum Handness
+            {
+                /// Right handed. (internal)
+                RightHanded = 0,
+                /// Left handed.
+                LeftHanded = 1
+            };
+
+            enum Axis
+            {
+                /// X is the up axis.
+                AxisX = 0,
+                /// Y is the up axis.
+                AxisY = 1,
+                /// Z is the up axis.
+                AxisZ = 2
+            };
+
             /// @brief RayDerivative computation method. 
             /// use Phase::PzSetRayDerivativeType(enum RayDerivativeType); to tell PresenZ how ray derivatives must be computed.(dDdx and dDdy)
             enum RayDerivativeType
@@ -107,6 +144,13 @@ namespace PresenZ {
                 RDT_UNSCALED = 0,
                 /// Ray derivatives computations take in account the normalization of the ray to scale the derivatives ( Vray type)
                 RDT_SCALED = 1,
+            };
+
+            enum ZovRenderMode
+            {
+                ZRM_OUTSIDE = 0,
+                ZRM_BOTH = 1,
+                ZRM_INSIDE = 2
             };
 
             ///@brief for froxtrum rendering only, PresenZ moves the camera Ray origin or uses camera the NearClipPlane 
@@ -150,7 +194,7 @@ namespace PresenZ {
                 /// 2D Vector
                 VEC2 = 6,
                 /// PresenZ Internal used only on our Buckets 
-                PRZ = 7,
+                // PRZ = 7,
                 // for cryptomatte
                 CRYPTOMATTE = 8,
                 // for cryptomatte, internal data

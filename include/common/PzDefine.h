@@ -2,7 +2,7 @@
 #define _PresenZ_Utility_define_h_
 
 #ifndef PRESENZ_VERSION_NS 
-#define PRESENZ_VERSION_NS v4_1
+#define PRESENZ_VERSION_NS v5_0
 #endif
 
 #include <sstream>

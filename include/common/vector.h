@@ -11,6 +11,19 @@
 #include <iostream>
 
 
+template <typename T>
+bool almostEqual(T a, T b, T relTol = static_cast<T>(1e-5), T absTol = static_cast<T>(1e-12)) {
+    // Compute the difference
+    T diff = std::fabs(a - b);
+
+    // Absolute comparison for very small numbers
+    if (diff <= absTol)
+        return true;
+
+    // Relative comparison scaled by the largest magnitude
+    return diff <= std::max(std::fabs(a), std::fabs(b)) * relTol;
+}
+
 /** \defgroup NOZ_vector Vector API
 * \brief
 * This module contains vector math types and vector utilities. There
@@ -39,6 +52,10 @@ struct NozPoint
     NozPoint(float ix,float iy, float iz): x(ix),y(iy),z(iz){}
 /// constructor
     NozPoint(float w) : x(w), y(w), z(w) {}
+
+    bool isClose(const NozPoint& other, float epsilon = 1e-5f) const {
+        return (std::fabs(x - other.x) < epsilon) && (std::fabs(y - other.y) < epsilon && (std::fabs(z - other.z) < epsilon));
+    }
 
 /// add operator
     NozPoint operator+(const NozPoint& p) const
@@ -253,6 +270,15 @@ struct NozPoint2
     float x;
 /// y	
 	float y;
+
+    // Default constructor
+    NozPoint2() : x(0.0f), y(0.0f) {}
+
+    // Explicit 2D constructor
+    NozPoint2(float _x, float _y) : x(_x), y(_y) {}
+
+    // Allow initializing with a single float (both x and y)
+    explicit NozPoint2(float f) : x(f), y(f) {}
 
     bool isClose(const NozPoint2& other, float epsilon = 1e-5f) const {
         return (std::fabs(x - other.x) < epsilon) && (std::fabs(y - other.y) < epsilon);

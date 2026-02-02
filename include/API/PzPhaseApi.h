@@ -7,7 +7,7 @@
 #ifndef _PZPHASE_h_
 #define _PZPHASE_h_
 
-#include "export.h"
+#include "PzExport.h"
 #include "PzConstants.h"
 #include "common/matrix.h"
 #include "common/PzDefine.h"
@@ -67,7 +67,7 @@ namespace PresenZ {
             /// @brief Allow renders inside the render box (false by default, only outside (landscape mode) is renderer). 
             /// Turn on if there are objects are located within the Zone of View.
             /// @param[in] renderInside Boolean to turn on or off inside rendering.
-            presenz_plugin_sdk_EXPORT void PzSetRenderInsideBox(bool renderInside);
+            presenz_plugin_sdk_EXPORT void PzSetRenderInsideBox(ZovRenderMode zovRenderMode);
 
             /// @brief By default, PresenZ will return coordinates in camera space for when launching rays from the camera. 
             /// @param[in] renderSpace Define the space that will be used to return vectors & points when launching rays from the camera.
@@ -77,15 +77,23 @@ namespace PresenZ {
             /// @param[in] renderSpace Define the space that will be used to return vectors & points when launching rays for detect & render samples.
             presenz_plugin_sdk_EXPORT void PzSetSampleSpace(Space renderSpace);
 
+            /// @brief By default, PresenZ will consider a right handed coordinate system.
+            /// @param[in] handness Define the handness of the coordinate system used by the renderer.
+            presenz_plugin_sdk_EXPORT void PzSetHandness(Handness handness);
+
+            /// @brief Define the up axis of the incoming data. Default is AxisY.
+            /// @param[in] axis Input up axis.
+            presenz_plugin_sdk_EXPORT void PzSetUpAxis(Axis axis);
+
             /// @brief Will affect how PresenZ computes ray derivatives, to be set at PresenZ::Phase initialization
             /// By default, PresenZ will compute UNSCALED derivatives
-            /// @param[in] ray derivatives type
+            /// @param[in] RayDerivativeType ray derivatives type
             presenz_plugin_sdk_EXPORT void PzSetRayDerivativeType(enum RayDerivativeType);
 
             /// @brief By default for froxtrum rendering, the PresenZ::Camera will move the camera ray origin in the scene to perform shading
             /// PresenZ is anyway modifying the camera origin, but while froxtrum rendering it is doing this far more. 
             /// /!\ In vray, moving the camera origin affects the way the lightCache is queried to limit this effect it's possible to use nearClip along the ray instead of moving the ray origin  
-            /// @param[in] cameraRayOrigin defines if PresenZ::PzGetRayRenderPhase() will return a ray with the origin modified or with different starting distance
+            /// @param[in] froxtrumRayOrigin defines if PresenZ::PzGetRayRenderPhase() will return a ray with the origin modified or with different starting distance
             presenz_plugin_sdk_EXPORT void PzSetFroxtrumRayOrigin(FroxtrumRayOrigin  froxtrumRayOrigin);
 
             /// @brief By default, froxtrum rendering is off. This allow to turn that feature on.
@@ -133,6 +141,14 @@ namespace PresenZ {
             presenz_plugin_sdk_EXPORT void PzSetCameraUpVector(const NozVector& up);
 
 
+            /// @brief Set the pixel filter to use for the rendering.
+            /// @param[in] filter The pixel filter to use for the rendering.
+            presenz_plugin_sdk_EXPORT void PzSetPixelFilter(const PixelFilter& filter);
+
+            /// @brief Set the pixel filter width
+            /// @param[in] filterWidth The width of the pixel filter to use for the rendering.
+            presenz_plugin_sdk_EXPORT void PzSetPixelFilterWidth(const float& filterWidth);
+
             /// @brief Set Deep reflection data. Eye will be which is currently looking at geometry. If both eyes are 
             /// used, IPD will define the inter pupillary distance, distance between the eyes (in units, mm by default).
             /// @param[in] eye The current rendering eye
@@ -178,7 +194,7 @@ namespace PresenZ {
             presenz_plugin_sdk_EXPORT void PzSetBucketSize(const size_t& width, const size_t& height);
 
             /// @brief set filter to the Detection phase at rendering-time (as opposed to postRender filtering time) .
-            /// @param[in] filter. 
+            /// @param[in] filter the filtering to use. 
             presenz_plugin_sdk_EXPORT void PzSetDetectionRTFilters(const DetectionRTFiltering& filter = no_filter);
 
             /// @brief Set which transparency pass you are about to render. Use PRZ_REGULAR if you are not 
@@ -210,7 +226,7 @@ namespace PresenZ {
             presenz_plugin_sdk_EXPORT void PzSetClippingSphere(bool enabled, const NozVector& worldPos = NozVector(0.0f), const float radius = 100.0f, const bool clipInside = false);
 
             /// @brief lower the PresenZ definition by x2, x6 or x24 to prevent having points below a predefined size  
-            /// @param[in] size, in (cm)
+            /// @param[in] idealPointsize The desired target size of the point, in (cm)
             presenz_plugin_sdk_EXPORT void PzSetIdealPointSizeTarget(const double& idealPointsize);
 
             /// @brief Detection saveguard. trigger a safeguard action when the number of detect block is above blockNumber
@@ -304,11 +320,24 @@ namespace PresenZ {
             /// @return The 4x4 world to camera matrix.
             presenz_plugin_sdk_EXPORT NozMatrix PzGetWorldToCamMatrix();
 
+            /// @brief return the position of of a point from the PresenZ world space to the defined user world space.
+            /// @param[in] pt The 3D point to be converted.
+            /// @return The 3D point in user world space.
+            presenz_plugin_sdk_EXPORT NozVector PzGetPointInWorldUserSpace(const NozVector& pt);
+
+
+            /// @brief return the position of of a point from the user defined world space to the PresenZ world space.
+            /// @param[in] pt The 3D point to be converted.
+            /// @return The 3D point in PresenZ world space.
+            presenz_plugin_sdk_EXPORT NozVector PzGetPointInWorldPresenZSpace(const NozVector& pt);
 
             /// @brief Set the Cryptomatte AOVs we want to output.
             /// @param[in] objects Cryptomatte for objects
             /// @param[in] materials Cryptomatte for materials
             /// @param[in] assets Cryptomatte for assets
+			/// @param[in] objDepth Cryptomatte depth (2 = 4 rankings) for objects
+			/// @param[in] matDepth Cryptomatte depth (2 = 4 rankings) for materials
+			/// @param[in] assetDepth Cryptomatte depth (2 = 4 rankings) for assets
             /// @return True if successful at setting value.
             presenz_plugin_sdk_EXPORT bool PzSetCryptomatte(const bool& objects, const bool& materials, const bool& assets, const int& objDepth, const int& matDepth, const int& assetDepth);
 
@@ -331,6 +360,25 @@ namespace PresenZ {
             /// You invoke PzPhaseBegin once the engine is ready to start rendering.
             /// @return True if successful.
             presenz_plugin_sdk_EXPORT bool PzPhaseBegin();
+
+            /// @brief Return the current phase, or false if not initialized
+            /// @param[out] phase The current phase.
+            /// @return True if successful.
+            presenz_plugin_sdk_EXPORT bool PzGetPhase(Phase& phase);
+
+            /// @brief Return True if we are in detection phase
+            /// @return True if successful.
+            presenz_plugin_sdk_EXPORT bool PzIsPhaseDetect();
+
+            /// @brief Return True if we are in render phase
+            /// @return True if successful.
+            presenz_plugin_sdk_EXPORT bool PzIsPhaseRender();
+
+            /// @brief Return True if we are initialized
+            /// @return True if successful.
+            presenz_plugin_sdk_EXPORT bool PzIsInitialized();
+
+
 
             /// @brief Once rendering is finishing, PzPhaseTerminate has to be invoked. Regarding TerminatePhaseOptions argument,
             /// in the case of distributed rendering: you may not need to have the data saved locally (they were already forwarded to central server).

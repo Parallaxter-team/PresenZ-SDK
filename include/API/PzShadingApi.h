@@ -7,10 +7,12 @@
 #ifndef _PZSHADINGAPI_h_
 #define _PZSHADINGAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 #include "PzDetectSampleApi.h"
 #include "PzConstants.h"
 #include "common/vector.h"
+#include "PzPhaseApi.h"
+#include "PzCameraApi.h"
 
 namespace PresenZ {
 namespace Shading {
@@ -65,8 +67,8 @@ namespace PRESENZ_VERSION_NS {
     /// @param[in] CameraDir The direction of the camera in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
     /// @param[in] hitPoint the hitpoint (shading point) in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
     /// @param[in] hitDistance Distance between the ray origin (the camera) and the current shading point.
-    /// @param[in] pixelX X coordinate of the pixel.
-    /// @param[in] pixelY Y coordinate of the pixel.
+    /// @param[in] pixelX X coordinate of the rendered pixel.
+    /// @param[in] pixelY Y coordinate of the rendered pixel.
     /// @return the bent ray for the respective eye.
     presenz_plugin_sdk_EXPORT PzBendRay PzGetBendRayRenderPhase(
         const PresenZ::Phase::Eye& eye,
@@ -77,6 +79,35 @@ namespace PRESENZ_VERSION_NS {
         const double& hitDistance,
         const int& pixelX, 
         const int& pixelY
+    );
+
+
+    /// \brief Get a ray bent from  the specular point to override the shading context.
+    /// @param[in] gNormal The geometric normal of the hitpoint in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] normal The normal of the hitpoint in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] hitPoint the hitpoint (shading point) in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] pixelX X coordinate of the pixel.
+    /// @param[in] pixelY Y coordinate of the pixel.    
+    /// @return the bent ray for the respective eye.
+    presenz_plugin_sdk_EXPORT PzBendRay PzGetBendRayRenderPhase(
+        const NozVector& gnormal,
+        const NozVector& normal,
+        const NozPoint& hitPoint,
+        const int& pixelX,
+        const int& pixelY
+    );
+
+    /// \brief Get a ray bent from  the specular point to override the shading context.
+    /// @param[in] camOrigin camera origin in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] gNormal The geometric normal of the hitpoint in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] normal The normal of the hitpoint in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @param[in] hitPoint the hitpoint (shading point) in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
+    /// @return the bent ray for the respective eye.
+    PzBendRay PzGetBendRayRenderPhase(
+        const NozVector& camOrigin,
+        const NozVector& gnormal,
+        const NozVector& normal,
+        const NozPoint& hitPoint
     );
 
     /// \brief Get the world position of the current scanning camera (the best camera selected for scanning this point in space).
@@ -103,8 +134,8 @@ namespace PRESENZ_VERSION_NS {
 
     /// \brief Get the reflection direction for the current ray direction for RENDER_REFLECTION phase.
     /// @param[in] incomingDirectionWorld the incoming direction vector in current sample space coordinates. (see PzSetSampleSpace(Space renderSpace)).
-    /// @param[in] pixelX X coordinate of the pixel.
-    /// @param[in] pixelY Y coordinate of the pixel.
+    /// @param[in] x X coordinate of the pixel.
+    /// @param[in] y Y coordinate of the pixel.
     /// @return the reflection ray direction
     presenz_plugin_sdk_EXPORT NozVector PzGetReflectionDirection(const NozVector incomingDirectionWorld, const double &x, const double &y);
 
@@ -152,6 +183,21 @@ namespace PRESENZ_VERSION_NS {
     /// @param[in] pixelSampleIndex The sample index.
     /// @return a NozVector2 containing the position inside the camera pixel position.
     presenz_plugin_sdk_EXPORT NozVector2 PzGetXYInPixelPosition(const int& pixelX, const int& pixelY, const size_t &pixelSampleIndex);
+
+    /// \brief Get the X/Y position in [0,1[ inside the rendered pixel.
+/// @param[in] pixelX X coordinate of the pixel (rendered, like PzIsValidEvaluation).
+/// @param[in] pixelY Y coordinate of the pixel (rendered, like PzIsValidEvaluation).
+/// @param[in] incomingDir The incoming ray direction.
+/// @return a NozVector2 containing the position inside the camera pixel position.
+    presenz_plugin_sdk_EXPORT NozVector2 PzGetXYInPixelPosition(const int& pixelX, const int& pixelY, const NozVector& incomingDir);
+
+
+    /// @brief Reset a pixel internally
+    /// Note regarding thread safety: This method is not thread safe. It should be called by one thread at a time.
+    /// @param[in] x Horizontal position in screen space of the pixel on the target image.
+    /// @param[in] y Vertical position in screen space of the pixel on the target image.
+    /// @return True if the pixel has been reset.
+    presenz_plugin_sdk_EXPORT bool PzResetPixel(const int& px, const int& py);
 
 
     /// \brief Get the position in the cubemap of the current rendered pixel.

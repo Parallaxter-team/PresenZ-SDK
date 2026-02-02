@@ -7,6 +7,15 @@
 typedef std::array< std::array<float, 3>, 3 > NozMatrix3;
 typedef std::array< std::array<float, 4>, 4 > NozMatrix;
 
+
+// FOR FLIPPING Z AXIS (RH to LH or LH to RH)
+static const NozMatrix ZFlip = { {
+  {{ 1, 0,  0, 0 }},
+  {{ 0, 1,  0, 0 }},
+  {{ 0, 0, -1, 0 }},
+  {{ 0, 0,  0, 1 }},
+} };
+
 /// NOZ MATRIX 4*4
 inline void NozM4Idendity(NozMatrix &mout)
 {
@@ -50,7 +59,6 @@ inline bool isNozM4Identity(const NozMatrix& m, float eps = 1e-6f) {
 
     return true;
 }
-
 
 inline void nozMatrix_set(NozMatrix &mout,
                           float r00, float r01, float r02, float r03,
@@ -167,118 +175,177 @@ inline double nozMat3GetDeterminant(const NozMatrix3 &a){
 
 }
 
+inline void nozMat4gjInverse(const NozMatrix& m, NozMatrix& out)
+{
+    // Gauss–Jordan elimination with partial pivoting on [m | I]
+    // Works with row-major NozMatrix and avoids NaNs on near-singular inputs.
+
+    // Augmented matrix: 4 rows, 8 cols  => [m | I]
+    float a[4][8];
+    for (int r = 0; r < 4; ++r) {
+        a[r][0] = m[r][0]; a[r][1] = m[r][1]; a[r][2] = m[r][2]; a[r][3] = m[r][3];
+        a[r][4] = (r == 0) ? 1.f : 0.f;
+        a[r][5] = (r == 1) ? 1.f : 0.f;
+        a[r][6] = (r == 2) ? 1.f : 0.f;
+        a[r][7] = (r == 3) ? 1.f : 0.f;
+    }
+
+    // Forward elimination
+    for (int col = 0; col < 4; ++col) {
+        // Find pivot row
+        int pivot = col;
+        float maxAbs = fabsf(a[col][col]);
+        for (int r = col + 1; r < 4; ++r) {
+            float v = fabsf(a[r][col]);
+            if (v > maxAbs) { maxAbs = v; pivot = r; }
+        }
+
+        // Singular / nearly singular: return identity to avoid NaNs
+        if (maxAbs < NOZ_EPSILON) {
+            throw std::invalid_argument("Cannot invert singular matrix.");
+            NozM4Idendity(out);
+            return;
+        }
+
+        // Swap current row with pivot row
+        if (pivot != col) {
+            for (int c = 0; c < 8; ++c) std::swap(a[col][c], a[pivot][c]);
+        }
+
+        // Normalize pivot row
+        float invPivot = 1.0f / a[col][col];
+        for (int c = 0; c < 8; ++c) a[col][c] *= invPivot;
+
+        // Eliminate this column in other rows
+        for (int r = 0; r < 4; ++r) {
+            if (r == col) continue;
+            float f = a[r][col];
+            if (f != 0.0f) {
+                for (int c = 0; c < 8; ++c) a[r][c] -= f * a[col][c];
+            }
+        }
+    }
+
+    // Extract inverse from augmented matrix
+    for (int r = 0; r < 4; ++r) {
+        out[r][0] = a[r][4];
+        out[r][1] = a[r][5];
+        out[r][2] = a[r][6];
+        out[r][3] = a[r][7];
+    }
+}
 
 
 inline void nozMat4inverse(const NozMatrix &min, NozMatrix &FloatResult)
 {
-    //
-    // Inversion by Cramer's rule.  Code taken from an Intel publication
-    //
-    NozMatrix Result;
-    float tmp[12]; /* temp array for pairs */
-    float src[16]; /* array of transpose source matrix */
-    float det; /* determinant */
-    /* transpose matrix */
-    for (size_t i = 0; i < 4; i++)
-    {
-        src[i + 0 ] = min[i][0];
-        src[i + 4 ] = min[i][1];
-        src[i + 8 ] = min[i][2];
-        src[i + 12] = min[i][3];
+    if (min[0][3] != 0 || min[1][3] != 0 || min[2][3] != 0 || min[3][3] != 1) {
+        nozMat4gjInverse(min, FloatResult);
+        return;
     }
-    /* calculate pairs for first 8 elements (cofactors) */
-    tmp[0] = src[10] * src[15];
-    tmp[1] = src[11] * src[14];
-    tmp[2] = src[9] * src[15];
-    tmp[3] = src[11] * src[13];
-    tmp[4] = src[9] * src[14];
-    tmp[5] = src[10] * src[13];
-    tmp[6] = src[8] * src[15];
-    tmp[7] = src[11] * src[12];
-    tmp[8] = src[8] * src[14];
-    tmp[9] = src[10] * src[12];
-    tmp[10] = src[8] * src[13];
-    tmp[11] = src[9] * src[12];
-    /* calculate first 8 elements (cofactors) */
-    Result[0][0] = tmp[0]*src[5] + tmp[3]*src[6] + tmp[4]*src[7];
-    Result[0][0] -= tmp[1]*src[5] + tmp[2]*src[6] + tmp[5]*src[7];
-    Result[0][1] = tmp[1]*src[4] + tmp[6]*src[6] + tmp[9]*src[7];
-    Result[0][1] -= tmp[0]*src[4] + tmp[7]*src[6] + tmp[8]*src[7];
-    Result[0][2] = tmp[2]*src[4] + tmp[7]*src[5] + tmp[10]*src[7];
-    Result[0][2] -= tmp[3]*src[4] + tmp[6]*src[5] + tmp[11]*src[7];
-    Result[0][3] = tmp[5]*src[4] + tmp[8]*src[5] + tmp[11]*src[6];
-    Result[0][3] -= tmp[4]*src[4] + tmp[9]*src[5] + tmp[10]*src[6];
-    Result[1][0] = tmp[1]*src[1] + tmp[2]*src[2] + tmp[5]*src[3];
-    Result[1][0] -= tmp[0]*src[1] + tmp[3]*src[2] + tmp[4]*src[3];
-    Result[1][1] = tmp[0]*src[0] + tmp[7]*src[2] + tmp[8]*src[3];
-    Result[1][1] -= tmp[1]*src[0] + tmp[6]*src[2] + tmp[9]*src[3];
-    Result[1][2] = tmp[3]*src[0] + tmp[6]*src[1] + tmp[11]*src[3];
-    Result[1][2] -= tmp[2]*src[0] + tmp[7]*src[1] + tmp[10]*src[3];
-    Result[1][3] = tmp[4]*src[0] + tmp[9]*src[1] + tmp[10]*src[2];
-    Result[1][3] -= tmp[5]*src[0] + tmp[8]*src[1] + tmp[11]*src[2];
-    /* calculate pairs for second 8 elements (cofactors) */
-    tmp[0] = src[2]*src[7];
-    tmp[1] = src[3]*src[6];
-    tmp[2] = src[1]*src[7];
-    tmp[3] = src[3]*src[5];
-    tmp[4] = src[1]*src[6];
-    tmp[5] = src[2]*src[5];
 
-    tmp[6] = src[0]*src[7];
-    tmp[7] = src[3]*src[4];
-    tmp[8] = src[0]*src[6];
-    tmp[9] = src[2]*src[4];
-    tmp[10] = src[0]*src[5];
-    tmp[11] = src[1]*src[4];
-    /* calculate second 8 elements (cofactors) */
-    Result[2][0] = tmp[0]*src[13] + tmp[3]*src[14] + tmp[4]*src[15];
-    Result[2][0] -= tmp[1]*src[13] + tmp[2]*src[14] + tmp[5]*src[15];
-    Result[2][1] = tmp[1]*src[12] + tmp[6]*src[14] + tmp[9]*src[15];
-    Result[2][1] -= tmp[0]*src[12] + tmp[7]*src[14] + tmp[8]*src[15];
-    Result[2][2] = tmp[2]*src[12] + tmp[7]*src[13] + tmp[10]*src[15];
-    Result[2][2] -= tmp[3]*src[12] + tmp[6]*src[13] + tmp[11]*src[15];
-    Result[2][3] = tmp[5]*src[12] + tmp[8]*src[13] + tmp[11]*src[14];
-    Result[2][3] -= tmp[4]*src[12] + tmp[9]*src[13] + tmp[10]*src[14];
-    Result[3][0] = tmp[2]*src[10] + tmp[5]*src[11] + tmp[1]*src[9];
-    Result[3][0] -= tmp[4]*src[11] + tmp[0]*src[9] + tmp[3]*src[10];
-    Result[3][1] = tmp[8]*src[11] + tmp[0]*src[8] + tmp[7]*src[10];
-    Result[3][1] -= tmp[6]*src[10] + tmp[9]*src[11] + tmp[1]*src[8];
-    Result[3][2] = tmp[6]*src[9] + tmp[11]*src[11] + tmp[3]*src[8];
-    Result[3][2] -= tmp[10]*src[11] + tmp[2]*src[8] + tmp[7]*src[9];
-    Result[3][3] = tmp[10]*src[10] + tmp[4]*src[8] + tmp[9]*src[9];
-    Result[3][3] -= tmp[8]*src[9] + tmp[11]*src[10] + tmp[5]*src[8];
-    /* calculate determinant */
-    det=src[0]*Result[0][0]+src[1]*Result[0][1]+src[2]*Result[0][2]+src[3]*Result[0][3];
-    /* calculate matrix inverse */
-    det = 1.0f / det;
+    FloatResult = { {
+        {{
+        min[1][1] * min[2][2] - min[2][1] * min[1][2],
+        min[2][1] * min[0][2] - min[0][1] * min[2][2],
+        min[0][1] * min[1][2] - min[1][1] * min[0][2],
+        0
+        }},
+        {{
+        min[2][0] * min[1][2] - min[1][0] * min[2][2],
+        min[0][0] * min[2][2] - min[2][0] * min[0][2],
+        min[1][0] * min[0][2] - min[0][0] * min[1][2],
+        0 }},
+        {{
+        min[1][0] * min[2][1] - min[2][0] * min[1][1],
+        min[2][0] * min[0][1] - min[0][0] * min[2][1],
+        min[0][0] * min[1][1] - min[1][0] * min[0][1],
+        0}},
+        {{ 0, 0, 0, 1 }},
+        } };
 
+    float r = min[0][0] * FloatResult[0][0] + min[0][1] * FloatResult[1][0] + min[0][2] * FloatResult[2][0];
 
-    for (size_t i = 0; i < 4; i++)
-    {
-        for (size_t j = 0; j < 4; j++)
-        {
-            FloatResult[i][j] = float(Result[i][j] * det);
-        }
-    }
-    
-}
-
-
-inline void NozM4_MatrixByMatrixMult(const NozMatrix &A, const NozMatrix &B, NozMatrix &Result)
-{
-
-    for (size_t i = 0; i < 4; i++)
-    {
-        for (size_t i2 = 0; i2 < 4; i2++)
-        {
-            float Total = 0.0f;
-            for (size_t i3 = 0; i3 < 4; i3++)
-            {
-                Total += A[i][i3] * B[i3][i2];
+    if (fabsf(r) >= 1) {
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                FloatResult[i][j] /= r;
             }
-            Result[i][i2] = Total;
         }
     }
+    else {
+        float mr = fabsf(r) / std::numeric_limits<float>::min();
+        for (int i = 0; i < 3; ++i) {
+            for (int j = 0; j < 3; ++j) {
+                if (mr > fabsf(FloatResult[i][j])) {
+                    FloatResult[i][j] /= r;
+                }
+                else {
+                    throw std::invalid_argument("Cannot invert singular matrix.");
+                    FloatResult = NozMatrix();
+                    return;
+                }
+            }
+        }
+    }
+
+    FloatResult[3][0] = -min[3][0] * FloatResult[0][0] - min[3][1] * FloatResult[1][0] - min[3][2] * FloatResult[2][0];
+    FloatResult[3][1] = -min[3][0] * FloatResult[0][1] - min[3][1] * FloatResult[1][1] - min[3][2] * FloatResult[2][1];
+    FloatResult[3][2] = -min[3][0] * FloatResult[0][2] - min[3][1] * FloatResult[1][2] - min[3][2] * FloatResult[2][2];
+
 }
+
+
+
+inline void NozM4_MatrixByMatrixMult(const NozMatrix& A, const NozMatrix& B, NozMatrix& Result)
+{
+    NozMatrix tmp;
+    for (size_t i = 0; i < 4; i++) {
+        for (size_t j = 0; j < 4; j++) {
+            float total = 0.0f;
+            for (size_t k = 0; k < 4; k++) {
+                total += A[i][k] * B[k][j];
+            }
+            tmp[i][j] = total;
+        }
+    }
+    Result = tmp;
+}
+
+inline void NozM4Transpose3x3(const NozMatrix& m, NozMatrix& out)
+{
+    // start from identity to preserve [0 0 0 1] and zero translations
+    NozM4Idendity(out);
+
+
+    // transpose the 3x3 rotational/reflection block
+    out[0][0] = m[0][0]; out[0][1] = m[1][0]; out[0][2] = m[2][0];
+    out[1][0] = m[0][1]; out[1][1] = m[1][1]; out[1][2] = m[2][1];
+    out[2][0] = m[0][2]; out[2][1] = m[1][2]; out[2][2] = m[2][2];
+}
+
+
+inline void NozM4HandnessAxisMatrix(int handness, int upAxis, NozMatrix& mout)
+{
+    NozM4Idendity(mout);
+    if (upAxis == 2) {
+        NozMatrix rot = getNozM4Identity();
+        rot[0][0] = 1.0f;  rot[0][1] = 0.0f;  rot[0][2] = 0.0f;
+        rot[1][0] = 0.0f;  rot[1][1] = 0.0f;  rot[1][2] = -1.0f;
+        rot[2][0] = 0.0f;  rot[2][1] = 1.0f; rot[2][2] = 0.0f;
+        NozM4_MatrixByMatrixMult(rot, mout, mout);
+    }
+    else if (upAxis == 0) {
+        NozMatrix rot = getNozM4Identity();
+        rot[0][0] = 0.0f; rot[0][1] = -1.0f;
+        rot[1][0] = 1.0f; rot[1][1] = 0.0f;
+        NozM4_MatrixByMatrixMult(rot, mout, mout);
+    }
+    if (handness == 1) {
+        NozMatrix flip = getNozM4Identity();
+        flip[2][2] = -1.0f;
+        NozM4_MatrixByMatrixMult(mout, flip, mout);
+    }
+}
+
 
 #endif

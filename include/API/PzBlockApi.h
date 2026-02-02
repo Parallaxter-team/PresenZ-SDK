@@ -4,7 +4,7 @@
 #ifndef _PzBlockAPI_h_
 #define _PzBlockAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 
 /// \file PzBlockApi.h
 

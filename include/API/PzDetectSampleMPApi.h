@@ -1,7 +1,7 @@
 #ifndef _PzDetectSampleMPAPI_h_
 #define _PzDetectSampleMPAPI_h_
 
-#include "export.h"
+#include "PzExport.h"
 
 namespace PresenZ {
 namespace DetectSample {

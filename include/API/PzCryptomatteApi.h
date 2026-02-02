@@ -2,7 +2,7 @@
 #define _PZCRYPTOMATTEAPI_h_
 
 #include "PzRenderSampleApi.h"
-#include <map>
+
 
 namespace PresenZ {
 namespace Cryptomatte {
@@ -42,7 +42,7 @@ namespace PRESENZ_VERSION_NS {
             /// @brief Function to get the active Cryptomattes AOV in presenZ.  
             presenz_plugin_sdk_EXPORT void PzGetActiveCryptomatte(bool& objects, bool& materials, bool& assets);
 
-            presenz_plugin_sdk_EXPORT void PzSetSampleCrypto(PresenZ::RenderSample::PzRenderSample& sample, const cryptoType& type, const float& value);
+            presenz_plugin_sdk_EXPORT void PzSetSampleCrypto(PresenZ::RenderSample::PzRenderSampleBuilder* sb, const cryptoType& type, const float& value);
 
             presenz_plugin_sdk_EXPORT void PzAddObjectToManifest(const char* name);
             presenz_plugin_sdk_EXPORT void PzAddMaterialToManifest(const char* name);
