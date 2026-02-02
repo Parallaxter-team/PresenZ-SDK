@@ -1,4 +1,4 @@
-name: Publish Doxygen to GitHub Pages
+name: Deploy static content to Pages
 
 on:
   push:
@@ -15,37 +15,23 @@ concurrency:
   cancel-in-progress: false
 
 jobs:
-  build:
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
         uses: actions/checkout@v4
 
-      - name: Install Doxygen
-        run: |
-          sudo apt-get update
-          sudo apt-get install -y doxygen graphviz
-
-      - name: Build Doxygen
-        run: |
-          doxygen Doxyfile
-          # If your config outputs elsewhere, adjust the upload path below.
-
       - name: Setup Pages
         uses: actions/configure-pages@v4
 
-      - name: Upload Pages artifact
+      - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
         with:
-          path: docs/html   # <-- must contain index.html
+            path: docs/html
 
-  deploy:
-    needs: build
-    runs-on: ubuntu-latest
-    environment:
-      name: github-pages
-      url: ${{ steps.deployment.outputs.page_url }}
-    steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v4
